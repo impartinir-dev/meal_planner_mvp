@@ -1,0 +1,305 @@
+{% extends "layout.html" %}
+{% set active_page = "plan" %}
+
+{% block title %}Wochenplan • NutriMatch{% endblock %}
+
+{% block content %}
+<div class="space-y-8 max-w-4xl mx-auto">
+
+  <!-- TOP SUMMARY BAR -->
+  <div class="bg-surface rounded-2xl p-6 border border-stone-200/80 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-6">
+    <div class="space-y-1">
+      <div class="flex items-center gap-2">
+        <span class="text-xs font-bold uppercase tracking-wider text-ink-muted">Dein Wochenplan</span>
+        <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-stone-100 text-ink">{{ plan.store }}</span>
+        <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-stone-100 text-ink">{{ plan.diet }}</span>
+      </div>
+      <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-ink">
+        Ernährungsplan & Ersparnis
+      </h1>
+    </div>
+
+    <!-- Quick Stats Metric Pills -->
+    <div class="flex items-center gap-4 sm:gap-6 divide-x divide-stone-200">
+      <div class="space-y-0.5">
+        <span class="text-xs text-ink-muted block">Gesamteinkauf</span>
+        <span class="text-2xl font-black text-ink font-mono">{{ "%.2f"|format(plan.total_cost) }} €</span>
+      </div>
+      <div class="pl-4 sm:pl-6 space-y-0.5">
+        <span class="text-xs text-brand font-medium block">Du sparst</span>
+        <span class="text-2xl font-black text-brand font-mono">{{ "%.2f"|format(plan.combined_savings) }} €</span>
+      </div>
+      <div class="pl-4 sm:pl-6 space-y-0.5 hidden sm:block">
+        <span class="text-xs text-ink-muted block">Ø Kalorien</span>
+        <div class="flex items-baseline gap-1">
+          <span class="text-2xl font-black text-ink font-mono">{{ plan.daily_avg.calories }}</span>
+          <span class="text-xs text-ink-muted">/ {{ plan.target_calories|default(2200) }} kcal</span>
+        </div>
+      </div>
+      <div class="pl-4 sm:pl-6 space-y-0.5 hidden sm:block">
+        <span class="text-xs text-brand font-medium block">Ø Protein</span>
+        <div class="flex items-baseline gap-1">
+          <span class="text-2xl font-black text-brand font-mono">{{ plan.daily_avg.protein }} g</span>
+          <span class="text-xs text-ink-muted">/ {{ plan.target_protein|default(140) }}g</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY SWITCHER (Montag bis Sonntag) -->
+  <div class="flex gap-2 overflow-x-auto pb-2 border-b border-stone-200/80" id="dayTabsContainer">
+    {% for day in plan.days_plan %}
+    <button type="button" 
+            onclick="switchDay({{ loop.index0 }})" 
+            id="day-tab-{{ loop.index0 }}" 
+            class="day-tab-btn flex-1 min-w-[110px] py-3 px-4 rounded-xl text-xs font-bold transition-all text-center border {{ 'bg-stone-900 text-white border-stone-900 shadow-xs' if loop.first else 'bg-surface hover:bg-stone-50 text-ink-muted border-stone-200' }}">
+      <div class="font-extrabold text-sm">{{ day.day_name }}</div>
+      <div class="text-[11px] font-medium opacity-80 mt-0.5">{{ "%.2f"|format(day.cost) }} € • {{ day.protein }}g Prot</div>
+    </button>
+    {% endfor %}
+  </div>
+
+  <!-- ACTIVE DAY MEALS CONTAINER -->
+  <div class="space-y-6">
+    <div class="flex items-center justify-between">
+      <h2 class="text-xl font-extrabold text-ink" id="activeDayHeader">
+        Mahlzeiten für {{ plan.days_plan[0].day_name }}
+      </h2>
+      <a href="/einkaufszettel" class="text-xs font-bold text-brand hover:underline flex items-center gap-1">
+        <span>Zum Einkaufszettel</span>
+        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+      </a>
+    </div>
+
+    <!-- 3 Meal Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5" id="mealsGrid">
+      {% for meal in plan.days_plan[0].meals %}
+      <div class="bg-surface rounded-2xl p-6 border border-stone-200/80 shadow-xs flex flex-col justify-between space-y-4 hover:border-stone-300 transition-all">
+        
+        <div class="space-y-3">
+          <!-- Meal category & deal badge -->
+          <div class="flex items-center justify-between text-xs">
+            <span class="font-bold uppercase tracking-wider text-ink-muted">{{ meal.category }}</span>
+            {% if meal.has_deal %}
+            <span class="inline-flex items-center gap-1 bg-amber-50 text-amber-800 border border-amber-200/80 text-[10px] font-bold px-2 py-0.5 rounded-full">
+              <i data-lucide="tag" class="w-3 h-3 text-amber-600"></i>
+              <span>Angebot</span>
+            </span>
+            {% else %}
+            <span class="text-ink-muted text-[11px]">{{ meal.prep_time }}</span>
+            {% endif %}
+          </div>
+
+          <!-- Recipe Title -->
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 rounded-xl bg-stone-50 border border-stone-200 flex items-center justify-center text-brand flex-shrink-0">
+              <i data-lucide="{{ meal.lucide_icon or 'utensils' }}" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-base text-ink leading-snug">{{ meal.name }}</h3>
+              <div class="text-xs font-extrabold text-brand mt-0.5">{{ "%.2f"|format(meal.cost) }} € pro Portion</div>
+            </div>
+          </div>
+
+          <!-- Macros Bar -->
+          <div class="grid grid-cols-4 gap-1 p-2 bg-stone-50 rounded-xl text-center text-xs">
+            <div>
+              <div class="text-[10px] text-ink-muted">Kcal</div>
+              <div class="font-bold text-ink">{{ meal.macros.calories }}</div>
+            </div>
+            <div>
+              <div class="text-[10px] text-brand font-semibold">Protein</div>
+              <div class="font-bold text-brand">{{ meal.macros.protein }}g</div>
+            </div>
+            <div>
+              <div class="text-[10px] text-ink-muted">Carbs</div>
+              <div class="font-bold text-ink">{{ meal.macros.carbs }}g</div>
+            </div>
+            <div>
+              <div class="text-[10px] text-ink-muted">Fett</div>
+              <div class="font-bold text-ink">{{ meal.macros.fat }}g</div>
+            </div>
+          </div>
+
+          <!-- Ingredients List -->
+          <div class="space-y-1">
+            <span class="text-[11px] font-bold text-ink-muted block">Zutaten:</span>
+            <div class="flex flex-wrap gap-1">
+              {% for ing in meal.ingredients %}
+              <span class="text-[11px] px-2 py-0.5 rounded-md {{ 'bg-brand/10 text-brand font-semibold' if ing.in_pantry else ('bg-amber-50 text-amber-800 font-semibold border border-amber-200/60' if ing.is_deal else 'bg-stone-100 text-ink-muted') }}">
+                {{ ing.name }} ({{ ing.quantity }}{{ ing.unit }}){% if ing.in_pantry %} • Vorrat{% endif %}{% if ing.is_deal %} • Deal{% endif %}
+              </span>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Footer: Zubereitung & Tauschen -->
+        <div class="pt-3 border-t border-stone-100 flex items-center justify-between">
+          <button type="button" onclick="toggleInstructions('inst-0-{{ loop.index0 }}')" class="text-xs text-ink-muted hover:text-ink font-medium flex items-center gap-1">
+            <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
+            <span>Zubereitung</span>
+          </button>
+
+          <button type="button" onclick="swapMeal(0, '{{ meal.category }}', '{{ meal.id }}', {{ loop.index0 }})" class="px-3 py-1.5 rounded-full border border-stone-200 hover:border-brand text-ink hover:text-brand text-xs font-semibold transition-all flex items-center gap-1">
+            <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
+            <span>Tauschen</span>
+          </button>
+        </div>
+
+        <div id="inst-0-{{ loop.index0 }}" class="hidden text-xs text-ink-muted italic bg-stone-50 p-3 rounded-xl border border-stone-200/60">
+          {{ meal.instructions }}
+        </div>
+
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- BOTTOM ACTION BANNER -->
+  <div class="bg-stone-900 text-white rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <div>
+      <h3 class="text-lg font-bold">Bereit für den Wocheneinkauf?</h3>
+      <p class="text-xs text-stone-300 mt-1">Alle Zutaten sind automatisch nach Regalgängen bei {{ plan.store }} sortiert.</p>
+    </div>
+    <a href="/einkaufszettel" class="px-6 py-3 rounded-xl bg-white text-stone-900 hover:bg-stone-100 font-bold text-sm transition-all text-center flex-shrink-0 flex items-center justify-center gap-2">
+      <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+      <span>Zum Einkaufszettel ({{ plan.shopping_list|length }} Gänge)</span>
+    </a>
+  </div>
+
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+  let fullPlan = {{ plan | tojson | safe }};
+  let currentActiveDay = 0;
+
+  function switchDay(dayIdx) {
+    currentActiveDay = dayIdx;
+    const days = fullPlan.days_plan;
+    
+    // Update tabs
+    document.querySelectorAll(".day-tab-btn").forEach((btn, idx) => {
+      if (idx === dayIdx) {
+        btn.className = "day-tab-btn flex-1 min-w-[110px] py-3 px-4 rounded-xl text-xs font-bold transition-all text-center border bg-stone-900 text-white border-stone-900 shadow-xs";
+      } else {
+        btn.className = "day-tab-btn flex-1 min-w-[110px] py-3 px-4 rounded-xl text-xs font-bold transition-all text-center border bg-surface hover:bg-stone-50 text-ink-muted border-stone-200";
+      }
+    });
+
+    // Update Header
+    document.getElementById("activeDayHeader").innerText = `Mahlzeiten für ${days[dayIdx].day_name}`;
+
+    // Render Meals
+    renderDayMeals(days[dayIdx]);
+  }
+
+  function renderDayMeals(dayData) {
+    const grid = document.getElementById("mealsGrid");
+    grid.innerHTML = "";
+
+    dayData.meals.forEach((meal, mealIdx) => {
+      const card = document.createElement("div");
+      card.className = "bg-surface rounded-2xl p-6 border border-stone-200/80 shadow-xs flex flex-col justify-between space-y-4 hover:border-stone-300 transition-all";
+
+      const dealBadge = meal.has_deal 
+        ? `<span class="inline-flex items-center gap-1 bg-amber-50 text-amber-800 border border-amber-200/80 text-[10px] font-bold px-2 py-0.5 rounded-full"><i data-lucide="tag" class="w-3 h-3 text-amber-600"></i><span>Angebot</span></span>`
+        : `<span class="text-ink-muted text-[11px]">${meal.prep_time}</span>`;
+
+      const ingredientsList = meal.ingredients.map(ing => {
+        let cls = "bg-stone-100 text-ink-muted";
+        let extra = "";
+        if (ing.in_pantry) {
+          cls = "bg-brand/10 text-brand font-semibold";
+          extra = " • Vorrat";
+        } else if (ing.is_deal) {
+          cls = "bg-amber-50 text-amber-800 font-semibold border border-amber-200/60";
+          extra = " • Deal";
+        }
+        return `<span class="text-[11px] px-2 py-0.5 rounded-md ${cls}">${ing.name} (${ing.quantity}${ing.unit})${extra}</span>`;
+      }).join(" ");
+
+      card.innerHTML = `
+        <div class="space-y-3">
+          <div class="flex items-center justify-between text-xs">
+            <span class="font-bold uppercase tracking-wider text-ink-muted">${meal.category}</span>
+            ${dealBadge}
+          </div>
+
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 rounded-xl bg-stone-50 border border-stone-200 flex items-center justify-center text-brand flex-shrink-0">
+              <i data-lucide="${meal.lucide_icon || 'utensils'}" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-base text-ink leading-snug">${meal.name}</h3>
+              <div class="text-xs font-extrabold text-brand mt-0.5">${meal.cost.toFixed(2)} € pro Portion</div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-1 p-2 bg-stone-50 rounded-xl text-center text-xs">
+            <div><div class="text-[10px] text-ink-muted">Kcal</div><div class="font-bold text-ink">${meal.macros.calories}</div></div>
+            <div><div class="text-[10px] text-brand font-semibold">Protein</div><div class="font-bold text-brand">${meal.macros.protein}g</div></div>
+            <div><div class="text-[10px] text-ink-muted">Carbs</div><div class="font-bold text-ink">${meal.macros.carbs}g</div></div>
+            <div><div class="text-[10px] text-ink-muted">Fett</div><div class="font-bold text-ink">${meal.macros.fat}g</div></div>
+          </div>
+
+          <div class="space-y-1">
+            <span class="text-[11px] font-bold text-ink-muted block">Zutaten:</span>
+            <div class="flex flex-wrap gap-1">${ingredientsList}</div>
+          </div>
+        </div>
+
+        <div class="pt-3 border-t border-stone-100 flex items-center justify-between">
+          <button type="button" onclick="toggleInstructions('inst-${currentActiveDay}-${mealIdx}')" class="text-xs text-ink-muted hover:text-ink font-medium flex items-center gap-1">
+            <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
+            <span>Zubereitung</span>
+          </button>
+          <button type="button" onclick="swapMeal(${currentActiveDay}, '${meal.category}', '${meal.id}', ${mealIdx})" class="px-3 py-1.5 rounded-full border border-stone-200 hover:border-brand text-ink hover:text-brand text-xs font-semibold transition-all flex items-center gap-1">
+            <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
+            <span>Tauschen</span>
+          </button>
+        </div>
+
+        <div id="inst-${currentActiveDay}-${mealIdx}" class="hidden text-xs text-ink-muted italic bg-stone-50 p-3 rounded-xl border border-stone-200/60">
+          ${meal.instructions}
+        </div>
+      `;
+
+      grid.appendChild(card);
+    });
+
+    lucide.createIcons();
+  }
+
+  function toggleInstructions(id) {
+    const el = document.getElementById(id);
+    if (el) el.classList.toggle("hidden");
+  }
+
+  async function swapMeal(dayIndex, category, currentId, mealIdx) {
+    try {
+      const res = await fetch('/api/swap-meal', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          day_index: dayIndex,
+          category: category,
+          current_id: currentId,
+          store: fullPlan.store,
+          diet: fullPlan.diet,
+          pantry: fullPlan.pantry_items || []
+        })
+      });
+      const data = await res.json();
+      if (data.status === 'success') {
+        fullPlan.days_plan[dayIndex].meals[mealIdx] = data.meal;
+        renderDayMeals(fullPlan.days_plan[dayIndex]);
+      }
+    } catch(e) {
+      console.error(e);
+    }
+  }
+</script>
+{% endblock %}

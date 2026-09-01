@@ -1,0 +1,126 @@
+{% extends "layout.html" %}
+{% set active_page = "einkaufszettel" %}
+
+{% block title %}Einkaufszettel • NutriMatch{% endblock %}
+
+{% block content %}
+<div class="space-y-8 max-w-3xl mx-auto">
+
+  <!-- TOP TITLE & SUMMARY -->
+  <div class="bg-surface rounded-2xl p-6 sm:p-8 border border-stone-200/80 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+    <div class="space-y-1">
+      <div class="flex items-center gap-2">
+        <span class="text-xs font-bold uppercase tracking-wider text-ink-muted">Einkaufsliste</span>
+        <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-stone-100 text-ink">{{ plan.store }}</span>
+      </div>
+      <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-ink">
+        Dein Einkaufszettel
+      </h1>
+      <p class="text-xs text-ink-muted">
+        Sortiert nach Regalgängen bei {{ plan.store }}. Hake gekaufte Artikel einfach ab.
+      </p>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="flex items-center gap-2 flex-shrink-0">
+      <button type="button" onclick="copyShoppingList()" class="px-4 py-2.5 rounded-xl bg-brand hover:bg-brand-light text-white text-xs font-bold transition-all shadow-xs flex items-center gap-1.5 active:scale-95">
+        <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+        <span>Kopieren (WhatsApp)</span>
+      </button>
+      <button type="button" onclick="window.print()" class="px-3.5 py-2.5 rounded-xl border border-stone-200 hover:bg-stone-50 text-ink text-xs font-semibold transition-all">
+        <i data-lucide="printer" class="w-3.5 h-3.5"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- CHECKLIST BY AISLES -->
+  <div class="space-y-6">
+    {% for aisle in plan.shopping_list %}
+    <div class="bg-surface rounded-2xl p-6 border border-stone-200/80 shadow-xs space-y-3">
+      
+      <!-- Aisle Header -->
+      <div class="flex items-center justify-between border-b border-stone-100 pb-3">
+        <div class="flex items-center gap-2 font-bold text-base text-ink">
+          <span class="w-6 h-6 rounded-md bg-stone-100 text-brand flex items-center justify-center text-xs">
+            <i data-lucide="folder" class="w-3.5 h-3.5"></i>
+          </span>
+          <span>{{ aisle.aisle }}</span>
+        </div>
+        <span class="text-xs text-ink-muted font-medium">{{ aisle['items']|length }} Artikel</span>
+      </div>
+
+      <!-- Items List -->
+      <div class="divide-y divide-stone-100">
+        {% for item in aisle['items'] %}
+        <label class="flex items-center justify-between py-3 cursor-pointer group select-none">
+          <div class="flex items-center gap-3">
+            <input type="checkbox" class="w-5 h-5 rounded border-stone-300 text-brand focus:ring-brand accent-brand cursor-pointer">
+            <div class="space-y-0.5">
+              <span class="text-sm font-semibold text-ink group-has-[:checked]:line-through group-has-[:checked]:text-ink-muted block">
+                {{ item.name }}
+              </span>
+              <div class="flex items-center gap-2">
+                <span class="text-xs text-ink-muted">{{ item.quantity }} {{ item.unit }}</span>
+                {% if item.in_pantry %}
+                <span class="text-[10px] font-bold px-2 py-0.2 rounded-full bg-brand/10 text-brand">Im Vorrat</span>
+                {% endif %}
+                {% if item.is_deal %}
+                <span class="text-[10px] font-bold px-2 py-0.2 rounded-full bg-amber-50 text-amber-800 border border-amber-200/60">Angebot</span>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+
+          <div class="text-right">
+            <span class="text-sm font-extrabold font-mono {{ 'line-through text-ink-muted' if item.in_pantry else 'text-ink' }}">
+              {{ "%.2f"|format(item.cost) }} €
+            </span>
+          </div>
+        </label>
+        {% endfor %}
+      </div>
+
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- TOTAL BAR -->
+  <div class="bg-surface rounded-2xl p-6 border border-stone-200/80 shadow-xs flex items-center justify-between">
+    <div>
+      <span class="text-xs text-ink-muted block font-medium">Gesamtsumme an der Kasse</span>
+      <span class="text-xs text-brand font-bold">Du sparst {{ "%.2f"|format(plan.combined_savings) }} € gegenüber Normalpreis</span>
+    </div>
+    <div class="text-right">
+      <span class="text-3xl font-black text-ink font-mono">{{ "%.2f"|format(plan.total_cost) }} €</span>
+    </div>
+  </div>
+
+  <!-- Back Link -->
+  <div class="text-center pt-2">
+    <a href="/plan" class="text-xs font-bold text-brand hover:underline inline-flex items-center gap-1">
+      <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+      <span>Zurück zum Wochenplan</span>
+    </a>
+  </div>
+
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+  function copyShoppingList() {
+    const plan = {{ plan | tojson | safe }};
+    let text = `🛒 Mein Einkaufszettel (${plan.store}) - NutriMatch\nGesamtkosten: ${plan.total_cost.toFixed(2)} € (Ersparnis: ${plan.combined_savings.toFixed(2)} €)\n\n`;
+    plan.shopping_list.forEach(aisle => {
+      text += `📍 ${aisle.aisle}:\n`;
+      aisle.items.forEach(item => {
+        let tag = item.in_pantry ? ' (aus Vorrat)' : (item.is_deal ? ' (Angebot)' : '');
+        text += `  • [ ] ${item.name} (${item.quantity}${item.unit}) - ${item.cost.toFixed(2)} €${tag}\n`;
+      });
+      text += `\n`;
+    });
+    navigator.clipboard.writeText(text);
+    alert("✅ Einkaufszettel in die Zwischenablage kopiert! Bereit für WhatsApp oder Notizen.");
+  }
+</script>
+{% endblock %}

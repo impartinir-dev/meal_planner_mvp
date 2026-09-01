@@ -1,0 +1,329 @@
+{% extends "layout.html" %}
+{% set active_page = "setup" %}
+
+{% block title %}Konfigurator • NutriMatch{% endblock %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto space-y-8">
+
+  <!-- CONFIGURATOR PROGRESS HEADER -->
+  <div class="space-y-4">
+    <div class="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-ink-muted">
+      <span>Konfigurator</span>
+      <span id="stepCounterText">Schritt 1 von 3</span>
+    </div>
+
+    <!-- Step Track -->
+    <div class="grid grid-cols-3 gap-3">
+      <button type="button" onclick="goToStep(1)" id="step-nav-1" class="step-nav-btn text-left py-2 border-b-2 border-brand transition-all">
+        <span class="block text-[11px] font-bold text-brand" id="step-nav-sub-1">1. Supermarkt</span>
+        <span class="text-xs font-semibold text-ink truncate block" id="step-summary-1">{{ current_store }}</span>
+      </button>
+      <button type="button" onclick="goToStep(2)" id="step-nav-2" class="step-nav-btn text-left py-2 border-b-2 border-stone-200 transition-all">
+        <span class="block text-[11px] font-bold text-ink-muted" id="step-nav-sub-2">2. Ziel & Budget</span>
+        <span class="text-xs font-semibold text-ink-muted truncate block" id="step-summary-2">{{ current_diet }}</span>
+      </button>
+      <button type="button" onclick="goToStep(3)" id="step-nav-3" class="step-nav-btn text-left py-2 border-b-2 border-stone-200 transition-all">
+        <span class="block text-[11px] font-bold text-ink-muted" id="step-nav-sub-3">3. Vorrat</span>
+        <span class="text-xs font-semibold text-ink-muted truncate block" id="step-summary-3">Zero Waste</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- FORM CONTAINER -->
+  <form id="configForm" action="/setup" method="POST">
+
+    <!-- STEP 1 KACHEL: SUPERMARKT -->
+    <div id="stepCard1" class="step-card bg-surface rounded-3xl p-6 sm:p-10 border border-stone-200/80 shadow-xs space-y-6">
+      <div class="space-y-1.5">
+        <span class="text-xs font-bold text-brand uppercase tracking-wider">Schritt 1</span>
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-ink tracking-tight">
+          Wo kaufst du am liebsten ein?
+        </h1>
+        <p class="text-sm text-ink-muted">
+          Wähle deinen Supermarkt. Die App sucht automatisch die aktuellen Angebote der Woche dieser Kette heraus.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+        {% for store in stores %}
+        <label class="cursor-pointer">
+          <input type="radio" name="store" value="{{ store.id }}" class="peer sr-only" {{ 'checked' if store.id == current_store else '' }} onchange="onStoreSelect('{{ store.id }}')" required>
+          <div class="p-5 rounded-2xl border border-stone-200 peer-checked:border-brand peer-checked:bg-stone-50/80 hover:bg-stone-50 transition-all flex flex-col justify-between h-32 text-left">
+            <span class="text-[11px] font-semibold text-ink-muted uppercase tracking-wider">{{ store.badge }}</span>
+            <div>
+              <div class="font-extrabold text-lg text-ink">{{ store.name }}</div>
+              <div class="text-[11px] text-brand font-semibold flex items-center gap-1 mt-0.5">
+                <i data-lucide="tag" class="w-3.5 h-3.5"></i>
+                <span>Angebote aktiv</span>
+              </div>
+            </div>
+          </div>
+        </label>
+        {% endfor %}
+      </div>
+
+      <div class="pt-4 flex justify-end">
+        <button type="button" onclick="goToStep(2)" class="px-6 py-3.5 rounded-xl bg-brand hover:bg-brand-light text-white font-bold text-sm transition-all shadow-xs flex items-center gap-2 active:scale-95">
+          <span>Weiter zu Ziel & Budget</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- STEP 2 KACHEL: ERNÄHRUNG & BUDGET -->
+    <div id="stepCard2" class="step-card hidden bg-surface rounded-3xl p-6 sm:p-10 border border-stone-200/80 shadow-xs space-y-8">
+      <div class="space-y-1.5">
+        <span class="text-xs font-bold text-brand uppercase tracking-wider">Schritt 2</span>
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-ink tracking-tight">
+          Dein Ernährungsziel & Budget
+        </h1>
+        <p class="text-sm text-ink-muted">
+          Wie möchtest du dich ernähren und wie viel möchtest du maximal in der Woche ausgeben?
+        </p>
+      </div>
+
+      <!-- Diäten Pills -->
+      <div class="space-y-3">
+        <label class="text-xs font-bold uppercase tracking-wider text-ink-muted block">Ernährungsform</label>
+        <div class="flex flex-wrap gap-2.5">
+          {% for diet in diets %}
+          <label class="cursor-pointer">
+            <input type="radio" name="diet" value="{{ diet.id }}" class="peer sr-only" {{ 'checked' if diet.id == current_diet else '' }} onchange="onDietSelect('{{ diet.name }}')" required>
+            <div class="px-4 py-2.5 rounded-full border border-stone-200 text-xs sm:text-sm font-semibold text-ink peer-checked:bg-brand peer-checked:text-white peer-checked:border-brand hover:border-stone-300 transition-all flex items-center gap-2">
+              <i data-lucide="{{ diet.icon }}" class="w-4 h-4"></i>
+              <span>{{ diet.name }}</span>
+            </div>
+          </label>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Zeitraum & Budget Slider -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4 border-t border-stone-100">
+        
+        <!-- Zeitraum -->
+        <div class="space-y-3">
+          <label class="text-xs font-bold uppercase tracking-wider text-ink-muted block">Zeitraum</label>
+          <div class="grid grid-cols-2 gap-2">
+            <label class="cursor-pointer">
+              <input type="radio" name="days" value="5" class="peer sr-only" {{ 'checked' if current_days == 5 else '' }}>
+              <div class="py-2.5 px-3 rounded-xl border border-stone-200 text-xs font-bold text-center peer-checked:bg-stone-900 peer-checked:text-white peer-checked:border-stone-900 hover:bg-stone-50 transition-all">
+                5 Tage (Mo–Fr)
+              </div>
+            </label>
+            <label class="cursor-pointer">
+              <input type="radio" name="days" value="7" class="peer sr-only" {{ 'checked' if current_days == 7 else '' }}>
+              <div class="py-2.5 px-3 rounded-xl border border-stone-200 text-xs font-bold text-center peer-checked:bg-stone-900 peer-checked:text-white peer-checked:border-stone-900 hover:bg-stone-50 transition-all">
+                7 Tage (Vollwoche)
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Budget Slider -->
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <label class="text-xs font-bold uppercase tracking-wider text-ink-muted block">Wochenbudget</label>
+            <span class="text-lg font-extrabold text-brand font-mono" id="budgetValue">{{ current_budget|int }} €</span>
+          </div>
+          <input type="range" name="budget" min="25" max="100" step="5" value="{{ current_budget|int }}" id="budgetInput" oninput="document.getElementById('budgetValue').innerText = this.value + ' €'; updateConfigSummary();" class="w-full h-2 bg-stone-200 rounded-lg appearance-none cursor-pointer accent-brand">
+          <div class="flex justify-between text-[11px] text-ink-muted">
+            <span>25 €</span>
+            <span>50 € (Empfohlen)</span>
+            <span>100 €</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Makro-Ziele: Kalorien & Protein -->
+      <div class="space-y-4 pt-4 border-t border-stone-100">
+        <div class="flex items-center justify-between">
+          <label class="text-xs font-bold uppercase tracking-wider text-ink-muted block">Tägliche Makro-Ziele</label>
+          <span class="text-xs text-brand font-medium">Automatisch im Plan optimiert</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <!-- Kalorien Slider/Card -->
+          <div class="p-5 rounded-2xl bg-stone-50 border border-stone-200/70 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-ink flex items-center gap-1.5">
+                <i data-lucide="flame" class="w-4 h-4 text-amber-600"></i>
+                <span>Tageskalorien</span>
+              </span>
+              <span class="text-base font-extrabold text-ink font-mono" id="caloriesDisplay">{{ current_calories }} kcal</span>
+            </div>
+            <input type="range" name="calories" min="1400" max="3600" step="50" value="{{ current_calories }}" id="caloriesInput" oninput="document.getElementById('caloriesDisplay').innerText = this.value + ' kcal'; updateConfigSummary();" class="w-full h-2 bg-stone-200 rounded-lg appearance-none cursor-pointer accent-amber-600">
+            <div class="flex justify-between text-[10px] text-ink-muted">
+              <span>1.600 (Defizit)</span>
+              <span>2.200 (Halten)</span>
+              <span>3.000+ (Aufbau)</span>
+            </div>
+          </div>
+
+          <!-- Protein Slider/Card -->
+          <div class="p-5 rounded-2xl bg-stone-50 border border-stone-200/70 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-ink flex items-center gap-1.5">
+                <i data-lucide="dumbbell" class="w-4 h-4 text-brand"></i>
+                <span>Tagesprotein</span>
+              </span>
+              <span class="text-base font-extrabold text-brand font-mono" id="proteinDisplay">{{ current_protein }} g</span>
+            </div>
+            <input type="range" name="protein" min="60" max="240" step="5" value="{{ current_protein }}" id="proteinInput" oninput="document.getElementById('proteinDisplay').innerText = this.value + ' g'; updateConfigSummary();" class="w-full h-2 bg-stone-200 rounded-lg appearance-none cursor-pointer accent-brand">
+            <div class="flex justify-between text-[10px] text-ink-muted">
+              <span>80g (Basis)</span>
+              <span>140g (Fit)</span>
+              <span>200g+ (High-Protein)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-4 flex items-center justify-between">
+        <button type="button" onclick="goToStep(1)" class="px-5 py-3 rounded-xl border border-stone-200 hover:bg-stone-50 text-ink text-xs font-bold transition-all flex items-center gap-1.5">
+          <i data-lucide="arrow-left" class="w-4 h-4"></i>
+          <span>Zurück</span>
+        </button>
+        <button type="button" onclick="goToStep(3)" class="px-6 py-3.5 rounded-xl bg-brand hover:bg-brand-light text-white font-bold text-sm transition-all shadow-xs flex items-center gap-2 active:scale-95">
+          <span>Weiter zu Vorräte</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- STEP 3 KACHEL: VORRATSSCHRANK -->
+    <div id="stepCard3" class="step-card hidden bg-surface rounded-3xl p-6 sm:p-10 border border-stone-200/80 shadow-xs space-y-8">
+      <div class="space-y-1.5">
+        <span class="text-xs font-bold text-brand uppercase tracking-wider">Schritt 3</span>
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-ink tracking-tight">
+          Hast du schon Vorräte zuhause?
+        </h1>
+        <p class="text-sm text-ink-muted">
+          Wähle Zutaten aus, die du nicht neu kaufen musst. Unser Algorithmus zieht sie automatisch vom Kassenpreis ab (Zero Food Waste).
+        </p>
+      </div>
+
+      <!-- Config Summary Pill -->
+      <div class="p-4 rounded-2xl bg-stone-50 border border-stone-200/60 flex items-center justify-between text-xs">
+        <div class="space-y-0.5">
+          <span class="text-ink-muted block text-[11px]">Deine Konfiguration:</span>
+          <span class="font-bold text-ink" id="configSummaryText">Lidl • High-Protein</span>
+        </div>
+        <button type="button" onclick="goToStep(1)" class="text-brand hover:underline font-semibold text-xs">Ändern</button>
+      </div>
+
+      <!-- Pantry Chips -->
+      <div class="space-y-3">
+        <label class="text-xs font-bold uppercase tracking-wider text-ink-muted block">Vorhandene Zutaten anhaken (optional)</label>
+        <div class="flex flex-wrap gap-2.5">
+          {% for item in pantry_staples %}
+          <label class="cursor-pointer">
+            <input type="checkbox" name="pantry" value="{{ item.name }}" class="peer sr-only" {{ 'checked' if item.name in current_pantry else '' }}>
+            <div class="px-4 py-2.5 rounded-full border border-stone-200 text-xs font-medium text-ink peer-checked:bg-brand/10 peer-checked:text-brand peer-checked:border-brand/40 peer-checked:font-bold hover:border-stone-300 transition-all flex items-center gap-2">
+              <i data-lucide="{{ item.icon }}" class="w-3.5 h-3.5 text-ink-muted peer-checked:text-brand"></i>
+              <span>{{ item.name }}</span>
+              <span class="text-[10px] text-ink-muted">{{ item.hint }}</span>
+            </div>
+          </label>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="pt-4 flex items-center justify-between gap-4">
+        <button type="button" onclick="goToStep(2)" class="px-5 py-3 rounded-xl border border-stone-200 hover:bg-stone-50 text-ink text-xs font-bold transition-all flex items-center gap-1.5 flex-shrink-0">
+          <i data-lucide="arrow-left" class="w-4 h-4"></i>
+          <span>Zurück</span>
+        </button>
+
+        <button type="submit" class="flex-1 max-w-sm py-4 rounded-xl bg-brand hover:bg-brand-light text-white font-extrabold text-sm transition-all shadow-md active:scale-[0.99] flex items-center justify-center gap-2">
+          <span>Wochenplan berechnen</span>
+          <i data-lucide="sparkles" class="w-4 h-4"></i>
+        </button>
+      </div>
+    </div>
+
+  </form>
+
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+  let currentStep = 1;
+
+  function updateConfigSummary() {
+    const selectedStore = document.querySelector('input[name="store"]:checked')?.value || 'Lidl';
+    const selectedDietEl = document.querySelector('input[name="diet"]:checked');
+    const selectedDietName = selectedDietEl?.parentElement?.innerText?.trim() || 'High-Protein';
+    const budgetVal = document.getElementById('budgetInput')?.value || '50';
+    const calVal = document.getElementById('caloriesInput')?.value || '2200';
+    const protVal = document.getElementById('proteinInput')?.value || '140';
+
+    document.getElementById('step-summary-1').innerText = selectedStore;
+    document.getElementById('step-summary-2').innerText = `${selectedDietName} • ${calVal} kcal`;
+    document.getElementById('configSummaryText').innerText = `${selectedStore} • ${selectedDietName} • ${calVal} kcal • ${protVal}g Protein • Max. ${budgetVal} €`;
+  }
+
+  function goToStep(stepNumber) {
+    // Validate store on leaving step 1
+    if (currentStep === 1 && stepNumber > 1) {
+      const storeChecked = document.querySelector('input[name="store"]:checked');
+      if (!storeChecked) {
+        alert("Bitte wähle zuerst einen Supermarkt aus.");
+        return;
+      }
+    }
+
+    currentStep = stepNumber;
+    updateConfigSummary();
+
+    // Toggle Cards
+    document.getElementById('stepCard1').classList.toggle('hidden', stepNumber !== 1);
+    document.getElementById('stepCard2').classList.toggle('hidden', stepNumber !== 2);
+    document.getElementById('stepCard3').classList.toggle('hidden', stepNumber !== 3);
+
+    // Update Step Counter
+    document.getElementById('stepCounterText').innerText = `Schritt ${stepNumber} von 3`;
+
+    // Update Navigation Indicators
+    for (let i = 1; i <= 3; i++) {
+      const navBtn = document.getElementById(`step-nav-${i}`);
+      const navSub = document.getElementById(`step-nav-sub-${i}`);
+      
+      if (i === stepNumber) {
+        navBtn.className = "step-nav-btn text-left py-2 border-b-2 border-brand transition-all";
+        navSub.className = "block text-[11px] font-bold text-brand";
+      } else if (i < stepNumber) {
+        navBtn.className = "step-nav-btn text-left py-2 border-b-2 border-stone-800 transition-all cursor-pointer";
+        navSub.className = "block text-[11px] font-bold text-stone-800";
+      } else {
+        navBtn.className = "step-nav-btn text-left py-2 border-b-2 border-stone-200 transition-all";
+        navSub.className = "block text-[11px] font-bold text-ink-muted";
+      }
+    }
+
+    lucide.createIcons();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function onStoreSelect(storeId) {
+    document.getElementById('step-summary-1').innerText = storeId;
+    // Auto-advance with subtle delay for great UX
+    setTimeout(() => {
+      goToStep(2);
+    }, 280);
+  }
+
+  function onDietSelect(dietName) {
+    document.getElementById('step-summary-2').innerText = dietName;
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    updateConfigSummary();
+    lucide.createIcons();
+  });
+</script>
+{% endblock %}
