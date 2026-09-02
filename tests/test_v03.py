@@ -16,9 +16,9 @@ def test_calculator_female_sedentary_lose():
 
 
 def test_never_again_id_is_not_planned():
-    plan = generate_meal_plan("Lidl", "All", 80, 5, 2000, 120, banned_ids=["rec_05"])
+    plan = generate_meal_plan("Lidl", "All", 80, 5, 2000, 120, banned_ids=["rec_53"])
     ids = [m["id"] for d in plan["days_plan"] for m in d["meals"]]
-    assert "rec_05" not in ids
+    assert "rec_53" not in ids
 
 
 def test_complete_recipe_has_steps_and_salt():

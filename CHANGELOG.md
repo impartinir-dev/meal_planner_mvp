@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.0 — 2026-09-02
+
+- Removed 45 old one-line recipes; only step-by-step recipes remain (46+).
+- Planner prefers a unique recipe for every slot of the week (no more same dish all week).
+- Daily view is a cooking timeline: steps always visible, week strip shows the three dishes per day.
+
 ## 0.3.0 — 2026-09-02
 
 - Never-again: ban a recipe immediately; it is swapped off this week and never planned again.

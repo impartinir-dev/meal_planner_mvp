@@ -2,7 +2,7 @@ from backend.algorithm import evaluate_recipe, generate_meal_plan, swap_single_m
 
 
 def test_pantry_zeros_cost_for_that_ingredient():
-    r = next(r for r in RECIPES if r["id"] == "rec_01")
+    r = next(r for r in RECIPES if r["id"] == "rec_47")
     without = evaluate_recipe(r, "Lidl", [])
     with_pantry = evaluate_recipe(r, "Lidl", ["Haferflocken"])
     assert with_pantry["cost"] < without["cost"]
@@ -13,7 +13,7 @@ def test_pantry_zeros_cost_for_that_ingredient():
 
 
 def test_portions_scale_cost_and_quantities():
-    r = next(r for r in RECIPES if r["id"] == "rec_01")
+    r = next(r for r in RECIPES if r["id"] == "rec_47")
     one = evaluate_recipe(r, "Lidl", [], portions=1)
     two = evaluate_recipe(r, "Lidl", [], portions=2)
     assert abs(two["cost"] - 2 * one["cost"]) < 0.02
@@ -23,7 +23,7 @@ def test_portions_scale_cost_and_quantities():
 
 
 def test_gram_quantities_are_whole_numbers_after_scaling():
-    r = next(r for r in RECIPES if r["id"] == "rec_01")
+    r = next(r for r in RECIPES if r["id"] == "rec_47")
     scaled = dict(r)
     scaled["ingredients"] = {k: v * (2200 / 1550) for k, v in r["ingredients"].items()}
     ev = evaluate_recipe(scaled, "Lidl", [])
@@ -61,6 +61,13 @@ def test_vegan_week_is_not_the_same_day_seven_times():
     plan = generate_meal_plan("REWE", "Vegan", 60, 7, 2000, 100, pantry=[], portions=1)
     signatures = [tuple(m["id"] for m in d["meals"]) for d in plan["days_plan"]]
     assert len(set(signatures)) >= 5
+
+
+def test_week_does_not_repeat_recipes_when_catalog_allows():
+    plan = generate_meal_plan("Lidl", "All", 90, 7, 2200, 130, pantry=[], portions=1)
+    ids = [m["id"] for d in plan["days_plan"] for m in d["meals"]]
+    assert len(ids) == 21
+    assert len(set(ids)) == 21, f"repeats: {ids}"
 
 
 def test_budget_flag_when_impossible():

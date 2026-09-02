@@ -530,10 +530,9 @@ def _solve_week(
 
     attempts = [
         (1, True, True, None),
-        (2, True, True, "variety"),
-        (None, True, True, "variety"),
-        (None, False, True, "budget"),
-        (None, False, False, "macros"),
+        (1, False, True, "budget"),
+        (1, False, False, "macros"),
+        (2, False, False, "variety"),
     ]
     relaxations = []
     picks = None

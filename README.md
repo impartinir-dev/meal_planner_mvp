@@ -1,6 +1,6 @@
 # NutriMatch DE
 
-**Version 0.3.0** — Invite-only Wochenplaner, Freemium + Pro. Household-Rechner, Nie-wieder, 85 Rezepte.
+**Version 0.4.0** — Invite-only Wochenplaner. Nur noch Rezepte mit echten Schritten, jedes Gericht höchstens einmal pro Woche.
 
 Invite-only Wochenplaner: Mahlzeiten nach **Ernährungsziel, Budget und kuratierten Supermarkt-Angeboten** (REWE, Lidl, ALDI Süd, Kaufland, EDEKA). Der Einkaufszettel rechnet in **kaufbaren Packungen** und lässt Vorräte weg.
 
