@@ -57,11 +57,11 @@ export default function DealsAdmin() {
         </div>
         <label className="text-xs font-bold uppercase tracking-wider text-ink-muted">
           KW
-          <input value={week} onChange={(e) => setWeek(e.target.value)} className="mt-1 block rounded-xl border border-stone-200 px-3 py-2 font-mono" />
+          <input value={week} onChange={(e) => setWeek(e.target.value)} className="mt-1 block rounded-xl border border-zinc-200 px-3 py-2 font-mono" />
         </label>
       </div>
       {Object.entries(stores).map(([store, deals]) => (
-        <div key={store} className="bg-surface rounded-2xl border border-stone-200 p-4 space-y-2">
+        <div key={store} className="bg-surface rounded-2xl border border-zinc-200 p-4 space-y-2">
           <h2 className="font-bold">{store}</h2>
           {deals.map((deal, idx) => (
             <div key={`${store}-${idx}`} className="grid grid-cols-2 sm:grid-cols-5 gap-2 text-xs">

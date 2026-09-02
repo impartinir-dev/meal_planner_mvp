@@ -1,0 +1,28 @@
+{
+  "store": "lidl",
+  "week": "2026-W36",
+  "items": [
+    {
+      "ean": "400000000001",
+      "name": "Freilandeier 10er",
+      "pack_size": 10,
+      "pack_unit": "Stück",
+      "aisle": "Kühlregal & Molkerei",
+      "price": 2.19,
+      "offer_price": 1.59,
+      "regular_price": 2.19,
+      "badge": "Prospekt-Knaller"
+    },
+    {
+      "ean": "400000000099",
+      "name": "Paprika rot 500g",
+      "pack_size": 500,
+      "pack_unit": "g",
+      "aisle": "Obst & Gemüse",
+      "price": 1.99,
+      "offer_price": 1.49,
+      "regular_price": 1.99,
+      "badge": "Angebot"
+    }
+  ]
+}

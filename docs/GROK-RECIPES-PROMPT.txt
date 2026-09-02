@@ -1,0 +1,53 @@
+You are writing original house recipes for NutriMatch, a German meal planner.
+We own the text. Do not copy Chefkoch, Bianca Zapatka, or any site. Classic dishes are fine; steps and yields must be yours.
+
+Goal: 90 recipes a German household would actually cook from Lidl or Marktkauf.
+Split: 30 Frühstück, 30 Mittagessen, 30 Abendessen.
+At least 25 with active_time_minutes <= 10 (timer running, not oven-unattended).
+Cuisines: mix German, Italian, East Asian, Mexican, Indian, Middle Eastern, Greek. Not only German.
+Locale of the text: "de".
+Servings: 2 (we scale later).
+status: "draft".
+
+Equipment allowed (use only these ids):
+stovetop, pan, saucepan, pot, oven, airfryer, microwave, blender, kettle, toaster, no-cook
+
+If a recipe needs an oven, put "oven" in equipment. If it only needs a pan on the hob: ["stovetop","pan"].
+
+Diets: tag from {All, Vegetarisch, Vegan, High-Protein, Low-Carb, Clean}. A vegan recipe is also Vegetarisch.
+
+Only use ingredients from this controlled list (ingredient_id). Do not invent ids.
+eggs, bread, oats, milk, rice, soy-sauce, butter, oil, onion, garlic, potato, carrot, tomato, cucumber, bell-pepper, spinach, salad, apple, banana, lemon, lime, yogurt, quark, cheese, feta, chicken, minced-beef, tofu, tuna, salmon, lentils, chickpeas, beans, pasta, noodles, flour, sugar, honey, salt, pepper, paprika-spice, cumin, curry-powder, chili, ginger, coconut-milk, stock, vinegar, mustard, ketchup, peanut-butter, sesame, cabbage, broccoli, zucchini, mushrooms, frozen-peas, frozen-berries, wraps, couscous, bulgur, polenta, egg-noodles.
+
+Units: g, ml, or Stück. Macros per serving (calories, protein, carbs, fat, fiber) must be plausible.
+
+Output ONLY a JSON array of 90 objects, no markdown fences, schema:
+
+{
+  "id": "kebab-case-unique-slug",
+  "title": "German title",
+  "cuisine": "german|italian|east-asian|mexican|indian|middle-eastern|greek|international",
+  "locale": "de",
+  "slot": "Frühstück" | "Mittagessen" | "Abendessen",
+  "active_time_minutes": 8,
+  "servings": 2,
+  "status": "draft",
+  "diets": ["Vegetarisch"],
+  "allergens": [],
+  "equipment": ["stovetop","pan"],
+  "calories": 420,
+  "protein": 24,
+  "carbs": 32,
+  "fat": 18,
+  "fiber": 4,
+  "steps": ["Step one.", "Step two.", "Step three."],
+  "lines": [{"ingredient_id": "eggs", "quantity": 3, "unit": "Stück"}]
+}
+
+Constraints:
+- 3–8 steps, numbered by array order, cookable by a tired person on a weeknight.
+- Every line.ingredient_id MUST be from the list above.
+- No alcohol, no specialty shop-only items (no fish sauce, no tamarind, no gochujang) until we have a SKU.
+- At least 10 High-Protein, 10 Vegan, 10 Low-Carb across the set.
+- Titles unique. No two recipes with the same title.
+- After the array, do not add commentary.

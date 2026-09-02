@@ -59,7 +59,7 @@ export default function Invites() {
       </div>
       {copied && <p className="text-xs text-brand font-semibold">Kopiert: {copied}</p>}
       {notice && <p className="text-xs text-brand font-semibold">{notice}</p>}
-      <div className="bg-surface rounded-2xl border border-stone-200/80 divide-y divide-stone-100">
+      <div className="bg-surface rounded-2xl border border-zinc-200/80 divide-y divide-zinc-100">
         {invites.map((inv) => (
           <div key={inv.code} className="px-4 py-3 flex items-center justify-between text-sm">
             <span className="font-mono font-bold tracking-widest">{inv.code}</span>
@@ -69,7 +69,7 @@ export default function Invites() {
       </div>
       <div>
         <h2 className="font-bold mb-2">Nutzer</h2>
-        <div className="bg-surface rounded-2xl border border-stone-200/80 divide-y divide-stone-100">
+        <div className="bg-surface rounded-2xl border border-zinc-200/80 divide-y divide-zinc-100">
           {users.map((u) => (
             <div key={u.id} className="px-4 py-3 flex flex-wrap items-center justify-between gap-2 text-sm">
               <span>{u.email} {u.is_admin && <span className="text-[10px] uppercase text-ink-muted">admin</span>}</span>

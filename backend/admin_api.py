@@ -97,7 +97,14 @@ def set_pro(user_id):
     user = db.session.get(User, user_id)
     if user is None:
         return jsonify({"error": "not_found"}), 404
-    flag = bool((request.get_json(silent=True) or {}).get("is_pro"))
-    user.is_pro = flag
+    data = request.get_json(silent=True) or {}
+    tier = str(data.get("plan_tier") or "").lower()
+    if tier in ("free", "plus", "premium"):
+        user.plan_tier = tier
+        user.is_pro = tier in ("plus", "premium")
+    else:
+        flag = bool(data.get("is_pro"))
+        user.is_pro = flag
+        user.plan_tier = "plus" if flag else "free"
     db.session.commit()
-    return jsonify({"ok": True, "is_pro": user.has_pro()})
+    return jsonify({"ok": True, "is_pro": user.has_plus(), "plan_tier": user.tier()})

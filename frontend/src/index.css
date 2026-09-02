@@ -3,12 +3,42 @@
 @tailwind utilities;
 
 body {
-  background-color: #FBFBFA;
-  color: #18181B;
+  background-color: #F4F5F7;
+  color: #0B0F0E;
 }
 
 @media print {
   header, footer, nav, .no-print {
     display: none !important;
   }
+  body {
+    background: white !important;
+  }
+  @page {
+    size: A4 portrait;
+    margin: 8mm;
+  }
+  .print-a4 {
+    display: flex !important;
+    height: 277mm;
+    gap: 0;
+  }
+  .print-a5 {
+    width: 50%;
+    padding: 6mm 8mm;
+    font-size: 9pt;
+    line-height: 1.25;
+  }
+  .print-cut {
+    width: 0;
+    border-left: 1px dashed #a1a1aa;
+    margin: 0 2mm;
+  }
+  .screen-list {
+    display: none !important;
+  }
+}
+
+.print-a4 {
+  display: none;
 }

@@ -27,7 +27,7 @@ export default function Login() {
 
   return (
     <div className="min-h-full flex items-center justify-center px-4 py-16 bg-canvas font-sans">
-      <form onSubmit={onSubmit} className="w-full max-w-md bg-surface rounded-3xl p-8 border border-stone-200/80 space-y-5">
+      <form onSubmit={onSubmit} className="w-full max-w-md bg-surface rounded-3xl p-8 border border-zinc-200/80 space-y-5">
         <div>
           <p className="text-xs font-bold uppercase tracking-wider text-brand">NutriMatch</p>
           <h1 className="text-2xl font-extrabold mt-1">Anmelden</h1>
@@ -41,7 +41,7 @@ export default function Login() {
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="mt-1 w-full rounded-xl border border-stone-200 px-3 py-2.5 text-sm font-medium"
+            className="mt-1 w-full rounded-xl border border-zinc-200 px-3 py-2.5 text-sm font-medium"
           />
         </label>
         <label className="block text-xs font-bold uppercase tracking-wider text-ink-muted">
@@ -51,7 +51,7 @@ export default function Login() {
             required
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="mt-1 w-full rounded-xl border border-stone-200 px-3 py-2.5 text-sm font-medium"
+            className="mt-1 w-full rounded-xl border border-zinc-200 px-3 py-2.5 text-sm font-medium"
           />
         </label>
         <button

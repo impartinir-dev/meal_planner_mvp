@@ -9,9 +9,15 @@ from backend.ocr import scan_receipt_image
 cupboard_bp = Blueprint("cupboard", __name__)
 
 
-def _require_pro():
-    if not current_user.has_pro():
-        return jsonify({"error": "pro_required"}), 402
+def _require_plus():
+    if not current_user.has_plus():
+        return jsonify({"error": "plus_required"}), 402
+    return None
+
+
+def _require_premium():
+    if not current_user.has_premium():
+        return jsonify({"error": "premium_required"}), 402
     return None
 
 
@@ -28,7 +34,7 @@ def _item_json(item):
 @cupboard_bp.get("/")
 @login_required
 def list_cupboard():
-    denied = _require_pro()
+    denied = _require_plus()
     if denied:
         return denied
     items = CupboardItem.query.filter_by(user_id=current_user.id).order_by(CupboardItem.name).all()
@@ -38,14 +44,16 @@ def list_cupboard():
 @cupboard_bp.post("/")
 @login_required
 def add_cupboard():
-    denied = _require_pro()
+    denied = _require_plus()
     if denied:
         return denied
     data = request.get_json(silent=True) or {}
     name = str(data.get("name") or "").strip()
-    if name not in PACK_SIZES:
+    if not name:
         return jsonify({"error": "unknown_ingredient"}), 400
-    _, unit, _ = pack_info(name)
+    unit = str(data.get("unit") or "g")
+    if name in PACK_SIZES:
+        _, unit, _ = pack_info(name)
     try:
         qty = float(data.get("quantity") or 0)
     except (TypeError, ValueError):
@@ -72,7 +80,7 @@ def add_cupboard():
 @cupboard_bp.delete("/<int:item_id>")
 @login_required
 def delete_cupboard(item_id):
-    denied = _require_pro()
+    denied = _require_plus()
     if denied:
         return denied
     item = CupboardItem.query.filter_by(id=item_id, user_id=current_user.id).first()
@@ -86,7 +94,7 @@ def delete_cupboard(item_id):
 @cupboard_bp.post("/scan")
 @login_required
 def scan_receipt():
-    denied = _require_pro()
+    denied = _require_premium()
     if denied:
         return denied
     upload = request.files.get("file")

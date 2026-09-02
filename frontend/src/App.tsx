@@ -11,6 +11,7 @@ import Shopping from './pages/Shopping'
 import Cupboard from './pages/Cupboard'
 import Upgrade from './pages/Upgrade'
 import DealsAdmin from './pages/DealsAdmin'
+import Profile from './pages/Profile'
 import type { ReactNode } from 'react'
 
 function Guard({ children }: { children: ReactNode }) {
@@ -62,6 +63,7 @@ export default function App() {
             <Route path="/einladungen" element={<Invites />} />
             <Route path="/vorrat" element={<Cupboard />} />
             <Route path="/pro" element={<Upgrade />} />
+            <Route path="/profil" element={<Profile />} />
             <Route path="/angebote" element={<DealsAdmin />} />
           </Route>
         </Routes>

@@ -3,6 +3,7 @@ export type User = {
   email: string
   is_admin: boolean
   is_pro: boolean
+  plan_tier?: 'free' | 'plus' | 'premium'
 }
 
 export type Store = { id: string; name: string; badge: string; logo_char: string }
@@ -18,7 +19,9 @@ export type Meta = {
   deal_week: string
   version: string
   pro_price: number
+  premium_price?: number
   pro_period: string
+  equipment?: { id: string; name: string }[]
   calories_range: { min: number; max: number; step: number }
   protein_range: { min: number; max: number; step: number }
   budget_range: { min: number; max: number; step: number }
@@ -107,11 +110,20 @@ export type Plan = {
   checkout_cost?: number
 }
 
+export type MemberRole = 'ich' | 'partner' | 'kind' | 'mitbewohner' | 'andere'
+
 export type HouseholdMember = {
   id: string
   name: string
+  role?: MemberRole
   calories: number
   protein: number
+}
+
+export type Profile = {
+  email: string
+  plan_tier: 'free' | 'plus' | 'premium'
+  members: HouseholdMember[]
 }
 
 export type Prefs = {
@@ -125,6 +137,7 @@ export type Prefs = {
   portions: number
   exclude: string[]
   members: HouseholdMember[]
+  equipment: string[]
 }
 
 export type PlanPayload = {

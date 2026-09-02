@@ -17,17 +17,36 @@ class User(UserMixin, db.Model):
     password_hash = db.Column(db.String(255), nullable=False)
     is_admin = db.Column(db.Boolean, default=False, nullable=False)
     is_pro = db.Column(db.Boolean, default=False, nullable=False)
+    plan_tier = db.Column(db.String(16), default="free", nullable=False)
+    household_json = db.Column(db.Text, nullable=True)
     created_at = db.Column(db.DateTime, default=_utcnow, nullable=False)
 
+    def tier(self):
+        if self.is_admin:
+            return "premium"
+        t = (self.plan_tier or "free").lower()
+        if t in ("premium", "plus"):
+            return t
+        if self.is_pro:
+            return "plus"
+        return "free"
+
+    def has_plus(self):
+        return self.tier() in ("plus", "premium") or bool(self.is_admin)
+
+    def has_premium(self):
+        return self.tier() == "premium" or bool(self.is_admin)
+
     def has_pro(self):
-        return bool(self.is_admin or self.is_pro)
+        return self.has_plus()
 
     def to_public(self):
         return {
             "id": self.id,
             "email": self.email,
             "is_admin": self.is_admin,
-            "is_pro": self.has_pro(),
+            "is_pro": self.has_plus(),
+            "plan_tier": self.tier(),
         }
 
 
@@ -83,4 +102,17 @@ def ensure_schema():
         cols = {c["name"] for c in inspector.get_columns("users")}
         if "is_pro" not in cols:
             db.session.execute(text("ALTER TABLE users ADD COLUMN is_pro BOOLEAN DEFAULT 0 NOT NULL"))
+            db.session.commit()
+        cols = {c["name"] for c in inspector.get_columns("users")}
+        if "plan_tier" not in cols:
+            db.session.execute(text("ALTER TABLE users ADD COLUMN plan_tier VARCHAR(16) DEFAULT 'free' NOT NULL"))
+            db.session.commit()
+        cols = {c["name"] for c in inspector.get_columns("users")}
+        if "household_json" not in cols:
+            db.session.execute(text("ALTER TABLE users ADD COLUMN household_json TEXT"))
+            db.session.commit()
+    if "recipes" in inspector.get_table_names():
+        rcols = {c["name"] for c in inspector.get_columns("recipes")}
+        if "equipment" not in rcols:
+            db.session.execute(text("ALTER TABLE recipes ADD COLUMN equipment TEXT DEFAULT '[]' NOT NULL"))
             db.session.commit()

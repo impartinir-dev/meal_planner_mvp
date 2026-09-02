@@ -11,6 +11,14 @@ def test_seed_admin_can_be_looked_up(app):
         assert user.is_admin is True
 
 
+def test_meta_only_live_kitchen_stores(client):
+    _login_admin(client)
+    meta = client.get("/api/meta").get_json()
+    ids = [s["id"] for s in meta["stores"]]
+    assert ids == ["lidl", "marktkauf"]
+    assert "REWE" not in ids
+
+
 def test_generate_and_fetch_plan(client):
     _login_admin(client)
     body = {

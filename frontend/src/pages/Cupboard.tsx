@@ -31,11 +31,13 @@ export default function Cupboard() {
     void load()
   }, [])
 
-  if (!user?.is_pro || blocked) {
+  const plus = user?.is_pro || user?.plan_tier === 'plus' || user?.plan_tier === 'premium'
+  const premium = user?.plan_tier === 'premium' || user?.is_admin
+  if (!plus || blocked) {
     return (
       <div className="text-center space-y-3">
-        <p className="text-ink-muted">Der Vorratsschrank mit Kassenbon-Scan ist Teil von NutriMatch Pro.</p>
-        <Link to="/pro" className="text-brand font-bold text-sm">Zu Pro</Link>
+        <p className="text-ink-muted">Der persistente Vorratsschrank ist Teil von NutriMatch Plus (4,99 €).</p>
+        <Link to="/pro" className="text-brand font-bold text-sm">Zu Plus / Premium</Link>
       </div>
     )
   }
@@ -73,10 +75,11 @@ export default function Cupboard() {
     <div className="max-w-xl mx-auto space-y-6">
       <div>
         <h1 className="text-2xl font-extrabold">Vorratsschrank</h1>
-        <p className="text-sm text-ink-muted">Was du schon hast, kauft der Plan nicht nochmal. Kassenbon → Pro.</p>
+        <p className="text-sm text-ink-muted">Alles eintragen, was da ist. Beim Kochen wird abgezogen. Nächste Woche kaufst du weniger.</p>
       </div>
 
-      <label className="block bg-stone-900 text-white rounded-2xl p-6 cursor-pointer text-center">
+      {premium && (
+      <label className="block bg-zinc-900 text-white rounded-2xl p-6 cursor-pointer text-center">
         <span className="font-bold text-sm">{busy ? 'Bon wird gelesen…' : 'Kassenbon fotografieren / hochladen'}</span>
         <input
           type="file"
@@ -89,19 +92,27 @@ export default function Cupboard() {
           }}
         />
       </label>
+      )}
       {message && <p className="text-sm text-brand font-semibold">{message}</p>}
 
       <form onSubmit={(e) => void add(e)} className="flex gap-2">
-        <select value={name} onChange={(e) => setName(e.target.value)} className="flex-1 rounded-xl border border-stone-200 px-3 py-2 text-sm">
+        <input
+          list="cupboard-ings"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="z.B. Reis, Reste vom Sonntag"
+          className="flex-1 rounded-xl border border-zinc-200 px-3 py-2 text-sm"
+        />
+        <datalist id="cupboard-ings">
           {ingredients.map((ing) => (
-            <option key={ing} value={ing}>{ing}</option>
+            <option key={ing} value={ing} />
           ))}
-        </select>
-        <input value={qty} onChange={(e) => setQty(e.target.value)} className="w-24 rounded-xl border border-stone-200 px-3 py-2 text-sm" />
+        </datalist>
+        <input value={qty} onChange={(e) => setQty(e.target.value)} className="w-24 rounded-xl border border-zinc-200 px-3 py-2 text-sm" />
         <button type="submit" className="px-4 rounded-xl bg-brand text-white text-xs font-bold">Hinzufügen</button>
       </form>
 
-      <div className="bg-surface rounded-2xl border border-stone-200 divide-y divide-stone-100">
+      <div className="bg-surface rounded-2xl border border-zinc-200 divide-y divide-zinc-100">
         {items.map((item) => (
           <div key={item.id} className="px-4 py-3 flex items-center justify-between text-sm">
             <div>

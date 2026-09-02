@@ -30,6 +30,7 @@ def create_app(test_config=None):
     login_manager.session_protection = "basic"
 
     from backend.models import CupboardItem, RecipeBan, User, ensure_schema  # noqa: F401
+    from backend.kitchen import models as kitchen_models  # noqa: F401
 
     @login_manager.user_loader
     def load_user(user_id):
@@ -43,15 +44,26 @@ def create_app(test_config=None):
     from backend.api import api_bp
     from backend.admin_api import admin_bp
     from backend.cupboard_api import cupboard_bp
+    from backend.kitchen.api import kitchen_bp
 
     app.register_blueprint(auth_bp, url_prefix="/api/auth")
     app.register_blueprint(api_bp, url_prefix="/api")
     app.register_blueprint(admin_bp, url_prefix="/api/admin")
     app.register_blueprint(cupboard_bp, url_prefix="/api/cupboard")
+    app.register_blueprint(kitchen_bp, url_prefix="/api/kitchen")
 
     with app.app_context():
         db.create_all()
         ensure_schema()
+        from backend.kitchen.seed import seed_owned_catalog
+
+        seed_owned_catalog()
+        if not app.config.get("TESTING"):
+            recipes_file = os.path.join(project_root, "recipes.txt")
+            if os.path.isfile(recipes_file):
+                from backend.kitchen.import_recipes import import_from_path
+
+                import_from_path(recipes_file)
 
     dist = os.path.join(project_root, "frontend", "dist")
 
