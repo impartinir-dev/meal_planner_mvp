@@ -243,5 +243,125 @@
     "pack_size": 50,
     "unit": "g",
     "aisle": "Vorratskammer & Trocken"
+  },
+  "Salz": {
+    "pack_size": 500,
+    "unit": "g",
+    "aisle": "Vorratskammer & Trocken"
+  },
+  "Pfeffer": {
+    "pack_size": 50,
+    "unit": "g",
+    "aisle": "Vorratskammer & Trocken"
+  },
+  "Kurkuma": {
+    "pack_size": 40,
+    "unit": "g",
+    "aisle": "Vorratskammer & Trocken"
+  },
+  "Kreuzkümmel": {
+    "pack_size": 40,
+    "unit": "g",
+    "aisle": "Vorratskammer & Trocken"
+  },
+  "Oregano": {
+    "pack_size": 20,
+    "unit": "g",
+    "aisle": "Vorratskammer & Trocken"
+  },
+  "Basilikum": {
+    "pack_size": 20,
+    "unit": "g",
+    "aisle": "Vorratskammer & Trocken"
+  },
+  "Zimt": {
+    "pack_size": 40,
+    "unit": "g",
+    "aisle": "Vorratskammer & Trocken"
+  },
+  "Chiliflocken": {
+    "pack_size": 30,
+    "unit": "g",
+    "aisle": "Vorratskammer & Trocken"
+  },
+  "Petersilie": {
+    "pack_size": 30,
+    "unit": "g",
+    "aisle": "Obst & Gemüse"
+  },
+  "Dill": {
+    "pack_size": 30,
+    "unit": "g",
+    "aisle": "Obst & Gemüse"
+  },
+  "Honig": {
+    "pack_size": 250,
+    "unit": "g",
+    "aisle": "Vorratskammer & Trocken"
+  },
+  "Senf": {
+    "pack_size": 150,
+    "unit": "g",
+    "aisle": "Vorratskammer & Trocken"
+  },
+  "Essig": {
+    "pack_size": 500,
+    "unit": "ml",
+    "aisle": "Vorratskammer & Trocken"
+  },
+  "Butter": {
+    "pack_size": 250,
+    "unit": "g",
+    "aisle": "Kühlregal & Molkerei"
+  },
+  "Sahne": {
+    "pack_size": 200,
+    "unit": "g",
+    "aisle": "Kühlregal & Molkerei"
+  },
+  "Ingwer": {
+    "pack_size": 100,
+    "unit": "g",
+    "aisle": "Obst & Gemüse"
+  },
+  "Kokosmilch": {
+    "pack_size": 400,
+    "unit": "g",
+    "aisle": "Vorratskammer & Trocken"
+  },
+  "Lauch": {
+    "pack_size": 300,
+    "unit": "g",
+    "aisle": "Obst & Gemüse"
+  },
+  "Sellerie": {
+    "pack_size": 400,
+    "unit": "g",
+    "aisle": "Obst & Gemüse"
+  },
+  "Blumenkohl": {
+    "pack_size": 500,
+    "unit": "g",
+    "aisle": "Obst & Gemüse"
+  },
+  "Couscous": {
+    "pack_size": 500,
+    "unit": "g",
+    "aisle": "Vorratskammer & Trocken"
+  },
+  "Mais (Dose)": {
+    "pack_size": 300,
+    "unit": "g",
+    "aisle": "Vorratskammer & Trocken"
+  },
+  "Limette": {
+    "pack_size": 1,
+    "unit": "Stück",
+    "aisle": "Obst & Gemüse"
+  },
+  "Paprika rot": {
+    "pack_size": 200,
+    "unit": "g",
+    "aisle": "Obst & Gemüse"
   }
 }

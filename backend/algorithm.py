@@ -217,6 +217,7 @@ def meal_from_recipe(recipe, evaluation, category=None):
         "macros": recipe["macros"],
         "ingredients": evaluation["ingredients_detail"],
         "instructions": recipe.get("instructions", ""),
+        "status": None,
     }
 
 
@@ -411,12 +412,16 @@ def _assemble_plan(
     exclude=None,
     day_names=None,
     user_locked=None,
+    members=None,
+    banned_ids=None,
 ):
     from backend.shopping import build_shopping_list
 
     exclude = list(exclude or [])
     user_locked = user_locked or set()
     day_names = day_names or rolling_day_names(days)
+    members = list(members or [])
+    banned_ids = list(banned_ids or [])
 
     days_plan = []
     total_cals = total_prot = total_carbs = total_fat = 0
@@ -490,6 +495,8 @@ def _assemble_plan(
         "shopping_list": shopping,
         "pantry_items": list(pantry),
         "exclude": exclude,
+        "members": members,
+        "banned_ids": banned_ids,
         "recipe_cost": round(recipe_line_cost, 2),
         "checkout_cost": total_cost,
     }
@@ -508,7 +515,10 @@ def _solve_week(
     forbidden,
     exclude,
     catalog,
+    banned_ids=None,
 ):
+    banned_ids = set(banned_ids or [])
+    catalog = [r for r in catalog if r.get("id") not in banned_ids]
     valid = [r for r in _eligible_recipes(diet, catalog) if not recipe_blocked(r, exclude)]
     if not valid:
         valid = [r for r in catalog if not recipe_blocked(r, exclude)]
@@ -568,11 +578,15 @@ def generate_meal_plan(
     exclude=None,
     day_names=None,
     user_locked=None,
+    banned_ids=None,
+    members=None,
 ):
     reload_data()
     if pantry is None:
         pantry = []
     exclude = list(exclude or [])
+    banned_ids = list(banned_ids or [])
+    members = list(members or [])
     portions = max(1, int(portions))
     days = int(days)
     locked = locked or {}
@@ -599,6 +613,7 @@ def generate_meal_plan(
             forbidden,
             exclude,
             catalog,
+            banned_ids=banned_ids,
         )
         plan = _assemble_plan(
             picks,
@@ -616,6 +631,8 @@ def generate_meal_plan(
             exclude=exclude,
             day_names=day_names,
             user_locked=user_locked,
+            members=members,
+            banned_ids=banned_ids,
         )
         last_plan = plan
         pack = float(plan["total_cost"])
@@ -663,6 +680,8 @@ def swap_single_meal(plan, day_index, category, current_id):
         exclude=plan.get("exclude") or [],
         day_names=day_names,
         user_locked=user_locked,
+        banned_ids=plan.get("banned_ids") or [],
+        members=plan.get("members") or [],
     )
     new_id = new_plan["days_plan"][day_index]["meals"][
         SLOTS.index(category)
@@ -721,6 +740,7 @@ def swap_single_meal(plan, day_index, category, current_id):
             exclude=new_plan.get("exclude") or [],
             day_names=day_names,
             user_locked=user_locked,
+            members=new_plan.get("members") or [],
         )
     return new_plan
 

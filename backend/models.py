@@ -53,6 +53,17 @@ class Plan(db.Model):
     updated_at = db.Column(db.DateTime, default=_utcnow, onupdate=_utcnow, nullable=False)
 
 
+class RecipeBan(db.Model):
+    __tablename__ = "recipe_bans"
+
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False, index=True)
+    recipe_id = db.Column(db.String(32), nullable=False)
+    created_at = db.Column(db.DateTime, default=_utcnow, nullable=False)
+
+    __table_args__ = (db.UniqueConstraint("user_id", "recipe_id", name="uq_user_recipe_ban"),)
+
+
 class CupboardItem(db.Model):
     __tablename__ = "cupboard_items"
 

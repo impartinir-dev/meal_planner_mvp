@@ -22,11 +22,15 @@ function MealCard({
   meal,
   onSwap,
   onLock,
+  onLog,
+  onNever,
   swapping,
 }: {
   meal: Meal
   onSwap: () => void
   onLock: () => void
+  onLog: (status: 'cooked' | 'skipped' | null) => void
+  onNever: () => void
   swapping: boolean
 }) {
   const [open, setOpen] = useState(false)
@@ -93,8 +97,23 @@ function MealCard({
           </button>
         </div>
       </div>
+      <div className="flex flex-wrap gap-1.5">
+        <button type="button" onClick={() => onLog(meal.status === 'cooked' ? null : 'cooked')} className={`text-[10px] font-bold px-2 py-1 rounded-full border ${meal.status === 'cooked' ? 'bg-brand text-white border-brand' : 'border-stone-200'}`}>Gekocht</button>
+        <button type="button" onClick={() => onLog(meal.status === 'skipped' ? null : 'skipped')} className={`text-[10px] font-bold px-2 py-1 rounded-full border ${meal.status === 'skipped' ? 'bg-stone-800 text-white border-stone-800' : 'border-stone-200'}`}>Übersprungen</button>
+        <button type="button" onClick={onNever} className="text-[10px] font-bold px-2 py-1 rounded-full border border-red-200 text-red-800">Nie wieder</button>
+      </div>
       {open && (
-        <p className="text-xs text-ink-muted italic bg-stone-50 p-3 rounded-xl border border-stone-200/60">{meal.instructions}</p>
+        <div className="text-xs text-ink-muted bg-stone-50 p-3 rounded-xl border border-stone-200/60">
+          {Array.isArray(meal.instructions) ? (
+            <ol className="list-decimal pl-4 space-y-1">
+              {meal.instructions.map((step, i) => (
+                <li key={i}>{step}</li>
+              ))}
+            </ol>
+          ) : (
+            <p className="italic">{meal.instructions}</p>
+          )}
+        </div>
       )}
     </div>
   )
@@ -145,6 +164,21 @@ export default function PlanPage() {
     }
   }
 
+  async function logStatus(meal: Meal, status: 'cooked' | 'skipped' | null) {
+    const data = await api<PlanPayload>('/api/plan/log', {
+      method: 'POST',
+      json: { day_index: day, category: meal.category, status: status || '' },
+    })
+    setPayload(data)
+  }
+
+  async function neverAgain(meal: Meal) {
+    if (!window.confirm(`„${meal.name}“ nie wieder vorschlagen?`)) return
+    const data = await api<PlanPayload & { ids: string[] }>(`/api/recipes/${meal.id}/never-again`, { method: 'POST' })
+    if (data.plan) setPayload(data)
+    setSwapped(true)
+  }
+
   async function lock(meal: Meal) {
     const data = await api<PlanPayload>('/api/plan/lock', {
       method: 'POST',
@@ -165,6 +199,15 @@ export default function PlanPage() {
             {plan.deal_week && <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-brand/10 text-brand">{plan.deal_week}</span>}
           </div>
           <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight">Ernährungsplan &amp; Ersparnis</h1>
+          {!!plan.members?.length && (
+            <div className="flex flex-wrap gap-2 pt-1">
+              {plan.members.map((m) => (
+                <span key={m.id} className="text-[11px] bg-stone-50 border border-stone-200 rounded-full px-2 py-0.5">
+                  {m.name}: {m.calories} kcal / {m.protein}g
+                </span>
+              ))}
+            </div>
+          )}
         </div>
         <div className="flex items-center gap-4 sm:gap-6 divide-x divide-stone-200">
           <div>
@@ -245,6 +288,8 @@ export default function PlanPage() {
             swapping={swapKey === `${day}-${meal.category}`}
             onSwap={() => void swap(meal)}
             onLock={() => void lock(meal)}
+            onLog={(s) => void logStatus(meal, s)}
+            onNever={() => void neverAgain(meal)}
           />
         ))}
       </div>

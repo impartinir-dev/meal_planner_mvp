@@ -22,6 +22,8 @@ export type Meta = {
   calories_range: { min: number; max: number; step: number }
   protein_range: { min: number; max: number; step: number }
   budget_range: { min: number; max: number; step: number }
+  activity_levels?: { id: string; name: string }[]
+  goals?: { id: string; name: string }[]
 }
 
 export type Ingredient = {
@@ -47,8 +49,9 @@ export type Meal = {
   has_deal: boolean
   macros: { calories: number; protein: number; carbs: number; fat: number }
   ingredients: Ingredient[]
-  instructions: string
+  instructions: string | string[]
   locked?: boolean
+  status?: 'cooked' | 'skipped' | null
 }
 
 export type ShoppingItem = {
@@ -99,8 +102,16 @@ export type Plan = {
   }
   pantry_items: string[]
   exclude?: string[]
+  members?: HouseholdMember[]
   recipe_cost?: number
   checkout_cost?: number
+}
+
+export type HouseholdMember = {
+  id: string
+  name: string
+  calories: number
+  protein: number
 }
 
 export type Prefs = {
@@ -113,6 +124,7 @@ export type Prefs = {
   pantry: string[]
   portions: number
   exclude: string[]
+  members: HouseholdMember[]
 }
 
 export type PlanPayload = {

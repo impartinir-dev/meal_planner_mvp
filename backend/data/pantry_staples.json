@@ -7,5 +7,9 @@
   {"name": "Knoblauch", "icon": "sparkle", "hint": "Spart ~0,20 €"},
   {"name": "Gemüsebrühe", "icon": "soup", "hint": "Spart ~0,18 €"},
   {"name": "Chia-Samen", "icon": "sprout", "hint": "Spart ~0,40 €"},
-  {"name": "Erdnussbutter", "icon": "heart", "hint": "Spart ~0,50 €"}
+  {"name": "Erdnussbutter", "icon": "heart", "hint": "Spart ~0,50 €"},
+  {"name": "Salz", "icon": "circle", "hint": "Grundgewürz"},
+  {"name": "Pfeffer", "icon": "circle", "hint": "Grundgewürz"},
+  {"name": "Essig", "icon": "flask-conical", "hint": "Spart ~0,40 €"},
+  {"name": "Honig", "icon": "droplet", "hint": "Spart ~0,60 €"}
 ]

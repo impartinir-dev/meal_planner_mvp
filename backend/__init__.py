@@ -29,7 +29,7 @@ def create_app(test_config=None):
     login_manager.init_app(app)
     login_manager.session_protection = "basic"
 
-    from backend.models import CupboardItem, User, ensure_schema  # noqa: F401
+    from backend.models import CupboardItem, RecipeBan, User, ensure_schema  # noqa: F401
 
     @login_manager.user_loader
     def load_user(user_id):

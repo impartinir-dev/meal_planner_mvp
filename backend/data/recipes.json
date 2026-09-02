@@ -1294,5 +1294,1466 @@
     },
     "instructions": "Hähnchen würfeln, mit Paprikapulver würzen, mit Paprika und Zucchini scharf anbraten.",
     "icon": "🌶️"
+  },
+  {
+    "id": "rec_46",
+    "name": "Kräuter-Rührei auf Vollkornbrot",
+    "category": "Frühstück",
+    "prep_time": "12 Min",
+    "diets": [
+      "All",
+      "Vegetarisch",
+      "All",
+      "High-Protein",
+      "Clean"
+    ],
+    "ingredients": {
+      "Eier": 3,
+      "Vollkornbrot": 70,
+      "Butter": 10,
+      "Petersilie": 5,
+      "Salz": 1,
+      "Pfeffer": 1,
+      "Cherrytomaten": 80
+    },
+    "macros": {
+      "calories": 420,
+      "protein": 24,
+      "carbs": 32,
+      "fat": 20,
+      "fiber": 5
+    },
+    "instructions": [
+      "Vollkornbrot toasten.",
+      "Eier mit Salz, Pfeffer und gehackter Petersilie verquirlen.",
+      "Butter in der Pfanne schmelzen, Eier bei mittlerer Hitze cremig stocken lassen.",
+      "Mit halbierten Cherrytomaten auf dem Brot anrichten."
+    ],
+    "icon": "🍳"
+  },
+  {
+    "id": "rec_47",
+    "name": "Ofen-Porridge mit Apfel und Zimt",
+    "category": "Frühstück",
+    "prep_time": "25 Min",
+    "diets": [
+      "All",
+      "Vegetarisch",
+      "Sparfuchs",
+      "Clean"
+    ],
+    "ingredients": {
+      "Haferflocken": 80,
+      "Haferdrink": 200,
+      "Äpfel": 150,
+      "Zimt": 2,
+      "Honig": 10,
+      "Erdnussbutter": 15
+    },
+    "macros": {
+      "calories": 480,
+      "protein": 15,
+      "carbs": 72,
+      "fat": 14,
+      "fiber": 10
+    },
+    "instructions": [
+      "Ofen auf 180 °C vorheizen.",
+      "Haferflocken, Haferdrink, geriebenen Apfel und Zimt verrühren.",
+      "In eine kleine Auflaufform geben, 18–20 Min backen.",
+      "Mit Honig und Erdnussbutter servieren. (Honig weglassen für streng vegan.)"
+    ],
+    "icon": "🍎"
+  },
+  {
+    "id": "rec_48",
+    "name": "Avocado-Ei-Toast mit Limette",
+    "category": "Frühstück",
+    "prep_time": "10 Min",
+    "diets": [
+      "All",
+      "Vegetarisch",
+      "All",
+      "High-Protein",
+      "Clean"
+    ],
+    "ingredients": {
+      "Vollkornbrot": 80,
+      "Avocado": 1,
+      "Eier": 1,
+      "Limette": 0.5,
+      "Salz": 1,
+      "Pfeffer": 1,
+      "Chiliflocken": 1
+    },
+    "macros": {
+      "calories": 430,
+      "protein": 16,
+      "carbs": 34,
+      "fat": 26,
+      "fiber": 10
+    },
+    "instructions": [
+      "Ei 7 Min wachsweich kochen, abschrecken, halbieren.",
+      "Avocado mit Limettensaft, Salz und Pfeffer zerstampfen.",
+      "Auf getoastetem Vollkornbrot verstreichen, Ei und Chiliflocken darauf."
+    ],
+    "icon": "🥑"
+  },
+  {
+    "id": "rec_49",
+    "name": "Herzhafte Haferpfanne mit Champignons",
+    "category": "Frühstück",
+    "prep_time": "15 Min",
+    "diets": [
+      "All",
+      "Vegan",
+      "Vegetarisch",
+      "Clean"
+    ],
+    "ingredients": {
+      "Haferflocken": 70,
+      "Champignons": 120,
+      "Zwiebeln": 40,
+      "Olivenöl": 10,
+      "Sojasauce": 8,
+      "Pfeffer": 1,
+      "Petersilie": 5
+    },
+    "macros": {
+      "calories": 390,
+      "protein": 14,
+      "carbs": 48,
+      "fat": 14,
+      "fiber": 8
+    },
+    "instructions": [
+      "Champignons und Zwiebeln in Olivenöl anbraten.",
+      "Haferflocken zugeben und 2 Min mitrösten.",
+      "Mit 150 ml Wasser und Sojasauce ablöschen, 5 Min cremig köcheln.",
+      "Mit Pfeffer und Petersilie abschmecken."
+    ],
+    "icon": "🍄"
+  },
+  {
+    "id": "rec_50",
+    "name": "Hüttenkäse-Bowl mit Gurke und Dill",
+    "category": "Frühstück",
+    "prep_time": "8 Min",
+    "diets": [
+      "All",
+      "Vegetarisch",
+      "All",
+      "High-Protein",
+      "All",
+      "High-Protein",
+      "Low-Carb"
+    ],
+    "ingredients": {
+      "Hüttenkäse": 250,
+      "Gurke": 150,
+      "Dill": 5,
+      "Olivenöl": 8,
+      "Salz": 1,
+      "Pfeffer": 1,
+      "Vollkornbrot": 40
+    },
+    "macros": {
+      "calories": 340,
+      "protein": 32,
+      "carbs": 22,
+      "fat": 12,
+      "fiber": 3
+    },
+    "instructions": [
+      "Gurke in feine Scheiben schneiden, leicht salzen.",
+      "Hüttenkäse mit Dill, Pfeffer und Olivenöl verrühren.",
+      "Gurke darauf setzen, mit einer Scheibe Vollkornbrot essen."
+    ],
+    "icon": "🥒"
+  },
+  {
+    "id": "rec_51",
+    "name": "Bananen-Zimt-Pancakes (Hafer)",
+    "category": "Frühstück",
+    "prep_time": "20 Min",
+    "diets": [
+      "All",
+      "Vegetarisch",
+      "Sparfuchs"
+    ],
+    "ingredients": {
+      "Haferflocken": 80,
+      "Bananen": 120,
+      "Eier": 2,
+      "Milch": 80,
+      "Zimt": 2
+    },
+    "macros": {
+      "calories": 470,
+      "protein": 22,
+      "carbs": 62,
+      "fat": 12,
+      "fiber": 8
+    },
+    "instructions": [
+      "Haferflocken fein mahlen oder ungemahlen lassen.",
+      "Mit Banane, Eiern, Milch und Zimt zu einem Teig verrühren.",
+      "In einer leicht geölten Pfanne je 2–3 Min pro Seite goldbraun backen.",
+      "Stapeln und warm essen."
+    ],
+    "icon": "🥞"
+  },
+  {
+    "id": "rec_52",
+    "name": "Shakshuka mit Feta",
+    "category": "Frühstück",
+    "prep_time": "20 Min",
+    "diets": [
+      "All",
+      "Vegetarisch",
+      "All",
+      "High-Protein",
+      "Clean"
+    ],
+    "ingredients": {
+      "Eier": 2,
+      "passierte Tomaten": 200,
+      "Paprika rot": 80,
+      "Zwiebeln": 40,
+      "Knoblauch": 5,
+      "Olivenöl": 10,
+      "Feta / Hirtenkäse": 40,
+      "Kreuzkümmel": 2,
+      "Salz": 1,
+      "Pfeffer": 1
+    },
+    "macros": {
+      "calories": 410,
+      "protein": 24,
+      "carbs": 18,
+      "fat": 26,
+      "fiber": 5
+    },
+    "instructions": [
+      "Zwiebel, Paprika und Knoblauch in Olivenöl andünsten.",
+      "Passierte Tomaten, Kreuzkümmel, Salz und Pfeffer zugeben, 8 Min einkochen.",
+      "Mulden drücken, Eier einschlagen, 5–6 Min stocken lassen.",
+      "Feta darüber bröseln."
+    ],
+    "icon": "🍳"
+  },
+  {
+    "id": "rec_53",
+    "name": "Hähnchen-Gemüse-Suppe",
+    "category": "Mittagessen",
+    "prep_time": "35 Min",
+    "diets": [
+      "All",
+      "High-Protein",
+      "Clean",
+      "Sparfuchs"
+    ],
+    "ingredients": {
+      "Hähnchenbrust": 180,
+      "Karotten": 100,
+      "Sellerie": 80,
+      "Lauch": 80,
+      "Kartoffeln": 150,
+      "Gemüsebrühe": 400,
+      "Petersilie": 5,
+      "Salz": 2,
+      "Pfeffer": 1,
+      "Olivenöl": 8
+    },
+    "macros": {
+      "calories": 480,
+      "protein": 42,
+      "carbs": 42,
+      "fat": 12,
+      "fiber": 7
+    },
+    "instructions": [
+      "Hähnchen in Olivenöl rundherum anbraten, herausnehmen.",
+      "Gemüse würfeln und im Fond andünsten.",
+      "Brühe und Hähnchen zurück, 20 Min köcheln, Fleisch zerpflücken.",
+      "Mit Salz, Pfeffer und Petersilie abschmecken."
+    ],
+    "icon": "🍲"
+  },
+  {
+    "id": "rec_54",
+    "name": "Frikadellen mit Kartoffel und Brokkoli",
+    "category": "Mittagessen",
+    "prep_time": "35 Min",
+    "diets": [
+      "All",
+      "High-Protein",
+      "Clean"
+    ],
+    "ingredients": {
+      "Rinderhackfleisch": 160,
+      "Eier": 1,
+      "Zwiebeln": 40,
+      "Kartoffeln": 200,
+      "Brokkoli": 180,
+      "Senf": 8,
+      "Salz": 2,
+      "Pfeffer": 1,
+      "Olivenöl": 10,
+      "Petersilie": 5
+    },
+    "macros": {
+      "calories": 560,
+      "protein": 38,
+      "carbs": 42,
+      "fat": 24,
+      "fiber": 8
+    },
+    "instructions": [
+      "Kartoffeln in Salzwasser garen, Brokkoli 6 Min dämpfen.",
+      "Hack mit Ei, geriebener Zwiebel, Senf, Salz, Pfeffer, Petersilie verkneten, 3 Frikadellen formen.",
+      "In Olivenöl 4–5 Min je Seite braten.",
+      "Mit Kartoffeln und Brokkoli servieren."
+    ],
+    "icon": "🥩"
+  },
+  {
+    "id": "rec_55",
+    "name": "Lachs auf Dill-Kartoffeln",
+    "category": "Mittagessen",
+    "prep_time": "30 Min",
+    "diets": [
+      "All",
+      "High-Protein",
+      "Clean"
+    ],
+    "ingredients": {
+      "Lachsfilet": 160,
+      "Kartoffeln": 220,
+      "Dill": 8,
+      "Zitrone": 0.5,
+      "Butter": 10,
+      "Salz": 2,
+      "Pfeffer": 1,
+      "Olivenöl": 8
+    },
+    "macros": {
+      "calories": 580,
+      "protein": 38,
+      "carbs": 40,
+      "fat": 28,
+      "fiber": 4
+    },
+    "instructions": [
+      "Kartoffeln in Salzwasser weich kochen, abgießen.",
+      "Mit Butter, Dill, Salz und Pfeffer grob zerstampfen.",
+      "Lachs mit Olivenöl, Salz, Pfeffer und Zitrone 4 Min je Seite braten.",
+      "Auf den Kartoffeln anrichten, restlichen Zitronensaft darüber."
+    ],
+    "icon": "🐟"
+  },
+  {
+    "id": "rec_56",
+    "name": "Hähnchen-Kokos-Curry mit Reis",
+    "category": "Mittagessen",
+    "prep_time": "30 Min",
+    "diets": [
+      "All",
+      "High-Protein",
+      "Clean"
+    ],
+    "ingredients": {
+      "Hähnchenbrust": 180,
+      "Reis": 80,
+      "Kokosmilch": 150,
+      "Zwiebeln": 50,
+      "Knoblauch": 5,
+      "Ingwer": 10,
+      "Kurkuma": 3,
+      "Kreuzkümmel": 2,
+      "Spinat": 80,
+      "Olivenöl": 8,
+      "Salz": 2
+    },
+    "macros": {
+      "calories": 620,
+      "protein": 46,
+      "carbs": 58,
+      "fat": 20,
+      "fiber": 5
+    },
+    "instructions": [
+      "Reis nach Packung kochen.",
+      "Zwiebel, Knoblauch und Ingwer in Olivenöl andünsten, Gewürze 30 Sek rösten.",
+      "Hähnchenwürfel anbraten, Kokosmilch aufgießen, 12 Min köcheln.",
+      "Spinat unterheben, salzen, mit Reis servieren."
+    ],
+    "icon": "🍛"
+  },
+  {
+    "id": "rec_57",
+    "name": "Thunfisch-Vollkornpasta al Limone",
+    "category": "Mittagessen",
+    "prep_time": "20 Min",
+    "diets": [
+      "All",
+      "High-Protein",
+      "Sparfuchs"
+    ],
+    "ingredients": {
+      "Vollkornpasta": 90,
+      "Thunfisch (Dose)": 120,
+      "Zitrone": 0.5,
+      "Olivenöl": 12,
+      "Knoblauch": 5,
+      "Petersilie": 8,
+      "Salz": 2,
+      "Pfeffer": 1,
+      "Chiliflocken": 1
+    },
+    "macros": {
+      "calories": 540,
+      "protein": 36,
+      "carbs": 62,
+      "fat": 16,
+      "fiber": 9
+    },
+    "instructions": [
+      "Pasta in Salzwasser al dente kochen, 60 ml Kochwasser aufheben.",
+      "Knoblauch in Olivenöl glasig dünsten, Thunfisch und Chili zugeben.",
+      "Pasta, Kochwasser, Zitronensaft und Petersilie untermischen.",
+      "Mit Salz und Pfeffer abschmecken."
+    ],
+    "icon": "🍝"
+  },
+  {
+    "id": "rec_58",
+    "name": "Ofengemüse mit Kichererbsen und Feta",
+    "category": "Mittagessen",
+    "prep_time": "35 Min",
+    "diets": [
+      "All",
+      "Vegetarisch",
+      "Clean",
+      "Sparfuchs"
+    ],
+    "ingredients": {
+      "Kichererbsen": 150,
+      "Süßkartoffel": 180,
+      "Zucchini": 120,
+      "Paprika rot": 80,
+      "Olivenöl": 12,
+      "Oregano": 2,
+      "Feta / Hirtenkäse": 50,
+      "Salz": 2,
+      "Pfeffer": 1
+    },
+    "macros": {
+      "calories": 520,
+      "protein": 22,
+      "carbs": 58,
+      "fat": 22,
+      "fiber": 14
+    },
+    "instructions": [
+      "Ofen 200 °C. Gemüse und Kichererbsen mit Öl, Oregano, Salz, Pfeffer auf einem Blech verteilen.",
+      "25 Min rösten, einmal wenden.",
+      "Mit zerbröseltem Feta heiß servieren."
+    ],
+    "icon": "🥗"
+  },
+  {
+    "id": "rec_59",
+    "name": "Puten-Paprika-Pfanne mit Reis",
+    "category": "Mittagessen",
+    "prep_time": "25 Min",
+    "diets": [
+      "All",
+      "High-Protein",
+      "Clean"
+    ],
+    "ingredients": {
+      "Putenbrust": 180,
+      "Paprika-Mix": 150,
+      "Reis": 80,
+      "Zwiebeln": 40,
+      "Olivenöl": 10,
+      "Paprikapulver": 3,
+      "Salz": 2,
+      "Pfeffer": 1,
+      "Sojasauce": 8
+    },
+    "macros": {
+      "calories": 530,
+      "protein": 46,
+      "carbs": 56,
+      "fat": 10,
+      "fiber": 5
+    },
+    "instructions": [
+      "Reis kochen.",
+      "Pute in Streifen in Olivenöl scharf anbraten, herausnehmen.",
+      "Paprika und Zwiebel andünsten, Paprikapulver und Sojasauce zugeben.",
+      "Pute zurück, 3 Min schmoren, mit Reis anrichten."
+    ],
+    "icon": "🍚"
+  },
+  {
+    "id": "rec_60",
+    "name": "Linsen-Minestrone",
+    "category": "Mittagessen",
+    "prep_time": "35 Min",
+    "diets": [
+      "All",
+      "Vegan",
+      "Vegetarisch",
+      "Sparfuchs",
+      "Clean"
+    ],
+    "ingredients": {
+      "Rote Linsen": 80,
+      "Karotten": 80,
+      "Sellerie": 60,
+      "Zucchini": 80,
+      "passierte Tomaten": 150,
+      "Gemüsebrühe": 400,
+      "Olivenöl": 8,
+      "Oregano": 2,
+      "Salz": 2,
+      "Pfeffer": 1,
+      "Knoblauch": 5
+    },
+    "macros": {
+      "calories": 390,
+      "protein": 20,
+      "carbs": 58,
+      "fat": 8,
+      "fiber": 14
+    },
+    "instructions": [
+      "Gemüse und Knoblauch in Olivenöl andünsten.",
+      "Linsen, Tomaten und Brühe zugeben, 18 Min köcheln.",
+      "Oregano, Salz, Pfeffer. Bei Bedarf etwas Wasser."
+    ],
+    "icon": "🍲"
+  },
+  {
+    "id": "rec_61",
+    "name": "Couscous-Salat mit Kichererbsen",
+    "category": "Mittagessen",
+    "prep_time": "20 Min",
+    "diets": [
+      "All",
+      "Vegan",
+      "Vegetarisch",
+      "Sparfuchs",
+      "Clean"
+    ],
+    "ingredients": {
+      "Couscous": 80,
+      "Kichererbsen": 120,
+      "Gurke": 80,
+      "Cherrytomaten": 100,
+      "Zitrone": 0.5,
+      "Olivenöl": 12,
+      "Petersilie": 8,
+      "Salz": 2,
+      "Pfeffer": 1,
+      "Zwiebeln": 30
+    },
+    "macros": {
+      "calories": 480,
+      "protein": 18,
+      "carbs": 68,
+      "fat": 14,
+      "fiber": 12
+    },
+    "instructions": [
+      "Couscous mit 120 ml kochendem Wasser und Prise Salz quellen lassen, auflockern.",
+      "Kichererbsen, Gurke, Tomaten, Zwiebel mischen.",
+      "Dressing aus Öl, Zitrone, Salz, Pfeffer, Petersilie unterheben."
+    ],
+    "icon": "🥗"
+  },
+  {
+    "id": "rec_62",
+    "name": "Blumenkohl-Tofu-Curry",
+    "category": "Mittagessen",
+    "prep_time": "30 Min",
+    "diets": [
+      "All",
+      "Vegan",
+      "Vegetarisch",
+      "All",
+      "High-Protein"
+    ],
+    "ingredients": {
+      "Blumenkohl": 250,
+      "Bio-Tofu": 160,
+      "Kokosmilch": 150,
+      "Zwiebeln": 40,
+      "Ingwer": 8,
+      "Kurkuma": 3,
+      "Kreuzkümmel": 2,
+      "Olivenöl": 10,
+      "Salz": 2,
+      "Reis": 70
+    },
+    "macros": {
+      "calories": 560,
+      "protein": 28,
+      "carbs": 52,
+      "fat": 24,
+      "fiber": 10
+    },
+    "instructions": [
+      "Reis kochen. Tofu würfeln, in Öl knusprig braten, herausnehmen.",
+      "Zwiebel, Ingwer, Gewürze rösten, Blumenkohl 3 Min mitbraten.",
+      "Kokosmilch und 80 ml Wasser, 12 Min weich köcheln, Tofu zurück, salzen."
+    ],
+    "icon": "🥦"
+  },
+  {
+    "id": "rec_63",
+    "name": "Rinderhack-Bolognese komplett",
+    "category": "Abendessen",
+    "prep_time": "35 Min",
+    "diets": [
+      "All",
+      "High-Protein"
+    ],
+    "ingredients": {
+      "Rinderhackfleisch": 160,
+      "Vollkornpasta": 90,
+      "passierte Tomaten": 200,
+      "Karotten": 60,
+      "Zwiebeln": 50,
+      "Knoblauch": 8,
+      "Oregano": 2,
+      "Olivenöl": 8,
+      "Salz": 2,
+      "Pfeffer": 1,
+      "Parmesan": 15
+    },
+    "macros": {
+      "calories": 620,
+      "protein": 40,
+      "carbs": 68,
+      "fat": 18,
+      "fiber": 11
+    },
+    "instructions": [
+      "Pasta kochen.",
+      "Zwiebel, Karotte, Knoblauch in Öl andünsten, Hack krümelig anbraten.",
+      "Tomaten, Oregano, Salz, Pfeffer, 15 Min einkochen.",
+      "Mit Pasta und Parmesan servieren."
+    ],
+    "icon": "🍝"
+  },
+  {
+    "id": "rec_64",
+    "name": "Chili con Carne",
+    "category": "Abendessen",
+    "prep_time": "35 Min",
+    "diets": [
+      "All",
+      "High-Protein",
+      "Sparfuchs"
+    ],
+    "ingredients": {
+      "Rinderhackfleisch": 140,
+      "Kidneybohnen": 150,
+      "passierte Tomaten": 180,
+      "Paprika rot": 80,
+      "Zwiebeln": 50,
+      "Knoblauch": 5,
+      "Chiliflocken": 2,
+      "Kreuzkümmel": 2,
+      "Olivenöl": 8,
+      "Salz": 2
+    },
+    "macros": {
+      "calories": 520,
+      "protein": 36,
+      "carbs": 38,
+      "fat": 20,
+      "fiber": 14
+    },
+    "instructions": [
+      "Zwiebel und Knoblauch in Öl andünsten, Hack anbraten.",
+      "Paprika, Kreuzkümmel und Chili 1 Min mitrösten.",
+      "Tomaten und Bohnen 20 Min köcheln, salzen."
+    ],
+    "icon": "🌶️"
+  },
+  {
+    "id": "rec_65",
+    "name": "Ofen-Hähnchen mit Zitronen-Kartoffeln",
+    "category": "Abendessen",
+    "prep_time": "40 Min",
+    "diets": [
+      "All",
+      "High-Protein",
+      "Clean"
+    ],
+    "ingredients": {
+      "Hähnchenbrust": 200,
+      "Kartoffeln": 250,
+      "Zitrone": 0.5,
+      "Olivenöl": 12,
+      "Oregano": 2,
+      "Knoblauch": 8,
+      "Salz": 2,
+      "Pfeffer": 1,
+      "Brokkoli": 120
+    },
+    "macros": {
+      "calories": 560,
+      "protein": 48,
+      "carbs": 44,
+      "fat": 16,
+      "fiber": 8
+    },
+    "instructions": [
+      "Ofen 200 °C. Kartoffeln vierteln, mit Öl, Oregano, Knoblauch, Salz, Pfeffer mischen, 15 Min vorbacken.",
+      "Hähnchen salzen, pfeffern, dazulegen, Zitrone darüber, 18–20 Min weiterbacken.",
+      "Brokkoli in den letzten 10 Min mit aufs Blech oder dämpfen."
+    ],
+    "icon": "🍗"
+  },
+  {
+    "id": "rec_66",
+    "name": "Champignon-Risotto-Pfanne",
+    "category": "Abendessen",
+    "prep_time": "30 Min",
+    "diets": [
+      "All",
+      "Vegetarisch",
+      "Clean"
+    ],
+    "ingredients": {
+      "Reis": 90,
+      "Champignons": 180,
+      "Zwiebeln": 40,
+      "Gemüsebrühe": 350,
+      "Parmesan": 20,
+      "Butter": 10,
+      "Olivenöl": 8,
+      "Petersilie": 5,
+      "Salz": 1,
+      "Pfeffer": 1
+    },
+    "macros": {
+      "calories": 520,
+      "protein": 16,
+      "carbs": 72,
+      "fat": 16,
+      "fiber": 4
+    },
+    "instructions": [
+      "Zwiebel in Öl glasig, Reis 1 Min anschwitzen.",
+      "Brühe nach und nach angießen, 16–18 Min rühren.",
+      "Champignons separat in Butter braten, unterheben.",
+      "Parmesan, Petersilie, Salz, Pfeffer."
+    ],
+    "icon": "🍚"
+  },
+  {
+    "id": "rec_67",
+    "name": "Zucchini-Schiffchen mit Hack",
+    "category": "Abendessen",
+    "prep_time": "35 Min",
+    "diets": [
+      "All",
+      "High-Protein",
+      "All",
+      "High-Protein",
+      "Low-Carb"
+    ],
+    "ingredients": {
+      "Zucchini": 300,
+      "Rinderhackfleisch": 140,
+      "passierte Tomaten": 80,
+      "Zwiebeln": 30,
+      "Knoblauch": 5,
+      "Olivenöl": 8,
+      "Oregano": 2,
+      "Parmesan": 20,
+      "Salz": 2,
+      "Pfeffer": 1
+    },
+    "macros": {
+      "calories": 420,
+      "protein": 34,
+      "carbs": 14,
+      "fat": 24,
+      "fiber": 4
+    },
+    "instructions": [
+      "Ofen 190 °C. Zucchini längs halbieren, aushöhlen, salzen.",
+      "Hack mit Zwiebel, Knoblauch, Tomate, Oregano anbraten.",
+      "Füllen, Parmesan, 20 Min überbacken."
+    ],
+    "icon": "🥒"
+  },
+  {
+    "id": "rec_68",
+    "name": "Griechische Gemüsepfanne mit Feta",
+    "category": "Abendessen",
+    "prep_time": "20 Min",
+    "diets": [
+      "All",
+      "Vegetarisch",
+      "Clean"
+    ],
+    "ingredients": {
+      "Zucchini": 150,
+      "Paprika-Mix": 120,
+      "Cherrytomaten": 100,
+      "Zwiebeln": 40,
+      "Olivenöl": 12,
+      "Oregano": 2,
+      "Feta / Hirtenkäse": 70,
+      "Salz": 1,
+      "Pfeffer": 1,
+      "Zitrone": 0.3
+    },
+    "macros": {
+      "calories": 390,
+      "protein": 16,
+      "carbs": 18,
+      "fat": 28,
+      "fiber": 6
+    },
+    "instructions": [
+      "Gemüse in Olivenöl 8–10 Min braten.",
+      "Oregano, Salz, Pfeffer, Zitrone.",
+      "Feta über die heiße Pfanne bröseln."
+    ],
+    "icon": "🥗"
+  },
+  {
+    "id": "rec_69",
+    "name": "Linsen-Dal mit Spinat",
+    "category": "Abendessen",
+    "prep_time": "30 Min",
+    "diets": [
+      "All",
+      "Vegan",
+      "Vegetarisch",
+      "All",
+      "High-Protein",
+      "Sparfuchs"
+    ],
+    "ingredients": {
+      "Rote Linsen": 100,
+      "Spinat": 100,
+      "Zwiebeln": 50,
+      "Knoblauch": 8,
+      "Ingwer": 8,
+      "Kurkuma": 3,
+      "Kreuzkümmel": 2,
+      "passierte Tomaten": 120,
+      "Gemüsebrühe": 300,
+      "Olivenöl": 8,
+      "Salz": 2
+    },
+    "macros": {
+      "calories": 420,
+      "protein": 24,
+      "carbs": 62,
+      "fat": 8,
+      "fiber": 14
+    },
+    "instructions": [
+      "Zwiebel, Knoblauch, Ingwer in Öl andünsten, Gewürze rösten.",
+      "Linsen, Tomaten, Brühe 15 Min weich kochen.",
+      "Spinat unterheben, salzen."
+    ],
+    "icon": "🍲"
+  },
+  {
+    "id": "rec_70",
+    "name": "Kabeljau-Art: Thunfisch-Kartoffel-Auflauf",
+    "category": "Abendessen",
+    "prep_time": "35 Min",
+    "diets": [
+      "All",
+      "High-Protein"
+    ],
+    "ingredients": {
+      "Thunfisch (Dose)": 140,
+      "Kartoffeln": 220,
+      "Sahne": 80,
+      "Zwiebeln": 40,
+      "Dill": 5,
+      "Salz": 2,
+      "Pfeffer": 1,
+      "Olivenöl": 8,
+      "Parmesan": 15
+    },
+    "macros": {
+      "calories": 510,
+      "protein": 36,
+      "carbs": 42,
+      "fat": 20,
+      "fiber": 4
+    },
+    "instructions": [
+      "Kartoffeln in Scheiben vorkochen (8 Min).",
+      "Zwiebel in Öl andünsten, Thunfisch, Sahne, Dill, Salz, Pfeffer.",
+      "Schichten, Parmesan, 20 Min bei 190 °C überbacken."
+    ],
+    "icon": "🐟"
+  },
+  {
+    "id": "rec_71",
+    "name": "Tofu-Teriyaki-Pfanne",
+    "category": "Abendessen",
+    "prep_time": "20 Min",
+    "diets": [
+      "All",
+      "Vegetarisch",
+      "All",
+      "High-Protein"
+    ],
+    "ingredients": {
+      "Bio-Tofu": 200,
+      "Brokkoli": 150,
+      "Paprika rot": 80,
+      "Sojasauce": 20,
+      "Honig": 10,
+      "Ingwer": 8,
+      "Knoblauch": 5,
+      "Olivenöl": 10,
+      "Reis": 70
+    },
+    "macros": {
+      "calories": 540,
+      "protein": 32,
+      "carbs": 58,
+      "fat": 18,
+      "fiber": 8
+    },
+    "instructions": [
+      "Reis kochen. Tofu würfeln, in Öl knusprig braten.",
+      "Gemüse 4 Min mitbraten.",
+      "Sojasauce, Honig, Ingwer, Knoblauch 2 Min einkochen, alles wenden."
+    ],
+    "icon": "🍱"
+  },
+  {
+    "id": "rec_72",
+    "name": "Kartoffel-Lauch-Suppe",
+    "category": "Abendessen",
+    "prep_time": "30 Min",
+    "diets": [
+      "All",
+      "Vegetarisch",
+      "Sparfuchs",
+      "Clean"
+    ],
+    "ingredients": {
+      "Kartoffeln": 250,
+      "Lauch": 150,
+      "Gemüsebrühe": 400,
+      "Sahne": 40,
+      "Olivenöl": 8,
+      "Salz": 2,
+      "Pfeffer": 1,
+      "Petersilie": 5
+    },
+    "macros": {
+      "calories": 360,
+      "protein": 10,
+      "carbs": 52,
+      "fat": 12,
+      "fiber": 6
+    },
+    "instructions": [
+      "Lauch in Ringe, mit Kartoffelwürfeln in Öl andünsten.",
+      "Brühe 18 Min köcheln, grob pürieren.",
+      "Sahne, Salz, Pfeffer, Petersilie."
+    ],
+    "icon": "🍲"
+  },
+  {
+    "id": "rec_73",
+    "name": "Hähnchen-Caesar-Bowl ohne Fertigdressing",
+    "category": "Abendessen",
+    "prep_time": "20 Min",
+    "diets": [
+      "All",
+      "High-Protein",
+      "All",
+      "High-Protein",
+      "Low-Carb"
+    ],
+    "ingredients": {
+      "Hähnchenbrust": 180,
+      "Eisbergsalat": 100,
+      "Parmesan": 20,
+      "Naturjoghurt": 40,
+      "Senf": 8,
+      "Zitrone": 0.4,
+      "Olivenöl": 10,
+      "Knoblauch": 3,
+      "Salz": 1,
+      "Pfeffer": 1
+    },
+    "macros": {
+      "calories": 420,
+      "protein": 44,
+      "carbs": 8,
+      "fat": 22,
+      "fiber": 2
+    },
+    "instructions": [
+      "Hähnchen würzen und 5 Min je Seite braten, ruhen, schneiden.",
+      "Dressing: Joghurt, Senf, Zitrone, Öl, Knoblauch, Salz, Pfeffer.",
+      "Salat mit Dressing, Hähnchen und Parmesan."
+    ],
+    "icon": "🥗"
+  },
+  {
+    "id": "rec_74",
+    "name": "Gemüse-Couscous mit Harissa-Kick",
+    "category": "Abendessen",
+    "prep_time": "25 Min",
+    "diets": [
+      "All",
+      "Vegan",
+      "Vegetarisch",
+      "Sparfuchs"
+    ],
+    "ingredients": {
+      "Couscous": 90,
+      "Zucchini": 120,
+      "Karotten": 80,
+      "Kichererbsen": 100,
+      "Olivenöl": 10,
+      "Kreuzkümmel": 2,
+      "Chiliflocken": 1,
+      "Zitrone": 0.4,
+      "Salz": 2,
+      "Petersilie": 5
+    },
+    "macros": {
+      "calories": 470,
+      "protein": 16,
+      "carbs": 72,
+      "fat": 12,
+      "fiber": 12
+    },
+    "instructions": [
+      "Couscous mit kochendem Salzwasser quellen.",
+      "Gemüse in Öl mit Kreuzkümmel und Chili braten, Kichererbsen dazu.",
+      "Unter den Couscous heben, Zitrone und Petersilie."
+    ],
+    "icon": "🥗"
+  },
+  {
+    "id": "rec_75",
+    "name": "Eier-Spinat-Sahnepfanne",
+    "category": "Abendessen",
+    "prep_time": "15 Min",
+    "diets": [
+      "All",
+      "Vegetarisch",
+      "All",
+      "High-Protein",
+      "All",
+      "High-Protein",
+      "Low-Carb"
+    ],
+    "ingredients": {
+      "Eier": 3,
+      "Spinat": 150,
+      "Sahne": 50,
+      "Knoblauch": 5,
+      "Olivenöl": 8,
+      "Salz": 1,
+      "Pfeffer": 1,
+      "Parmesan": 10
+    },
+    "macros": {
+      "calories": 400,
+      "protein": 26,
+      "carbs": 6,
+      "fat": 30,
+      "fiber": 3
+    },
+    "instructions": [
+      "Knoblauch in Öl, Spinat zusammenfallen lassen.",
+      "Sahne, Salz, Pfeffer.",
+      "Eier daneben in die Pfanne, 3–4 Min stocken, Parmesan."
+    ],
+    "icon": "🍳"
+  },
+  {
+    "id": "rec_76",
+    "name": "Hackfleisch-Reis-Pfanne One-Pot",
+    "category": "Abendessen",
+    "prep_time": "30 Min",
+    "diets": [
+      "All",
+      "High-Protein",
+      "Sparfuchs"
+    ],
+    "ingredients": {
+      "Rinderhackfleisch": 150,
+      "Reis": 80,
+      "Paprika-Mix": 100,
+      "passierte Tomaten": 150,
+      "Gemüsebrühe": 250,
+      "Zwiebeln": 40,
+      "Paprikapulver": 3,
+      "Olivenöl": 8,
+      "Salz": 2,
+      "Pfeffer": 1
+    },
+    "macros": {
+      "calories": 580,
+      "protein": 34,
+      "carbs": 64,
+      "fat": 18,
+      "fiber": 6
+    },
+    "instructions": [
+      "Hack und Zwiebel in Öl krümelig braten.",
+      "Paprika und Paprikapulver mitrösten.",
+      "Reis, Tomaten, Brühe, 16 Min zugedeckt köcheln, salzen."
+    ],
+    "icon": "🍚"
+  },
+  {
+    "id": "rec_77",
+    "name": "Gebackener Blumenkohl mit Joghurt-Dip",
+    "category": "Abendessen",
+    "prep_time": "35 Min",
+    "diets": [
+      "All",
+      "Vegetarisch",
+      "Clean"
+    ],
+    "ingredients": {
+      "Blumenkohl": 300,
+      "Olivenöl": 12,
+      "Paprikapulver": 3,
+      "Kurkuma": 2,
+      "Salz": 2,
+      "Naturjoghurt": 80,
+      "Zitrone": 0.3,
+      "Knoblauch": 4,
+      "Petersilie": 5
+    },
+    "macros": {
+      "calories": 320,
+      "protein": 14,
+      "carbs": 22,
+      "fat": 18,
+      "fiber": 8
+    },
+    "instructions": [
+      "Ofen 200 °C. Röschen mit Öl und Gewürzen mischen, 25 Min rösten.",
+      "Dip: Joghurt, Knoblauch, Zitrone, Salz, Petersilie.",
+      "Heiß mit Dip essen."
+    ],
+    "icon": "🥦"
+  },
+  {
+    "id": "rec_78",
+    "name": "Puten-Zucchini-Low-Carb-Pfanne",
+    "category": "Abendessen",
+    "prep_time": "20 Min",
+    "diets": [
+      "All",
+      "High-Protein",
+      "All",
+      "High-Protein",
+      "Low-Carb",
+      "Clean"
+    ],
+    "ingredients": {
+      "Putenbrust": 200,
+      "Zucchini": 200,
+      "Paprika rot": 80,
+      "Olivenöl": 10,
+      "Oregano": 2,
+      "Salz": 2,
+      "Pfeffer": 1,
+      "Zitrone": 0.3
+    },
+    "macros": {
+      "calories": 380,
+      "protein": 48,
+      "carbs": 10,
+      "fat": 14,
+      "fiber": 4
+    },
+    "instructions": [
+      "Pute in Öl scharf anbraten.",
+      "Gemüse 6 Min mitbraten, Oregano, Salz, Pfeffer, Zitrone."
+    ],
+    "icon": "🥩"
+  },
+  {
+    "id": "rec_79",
+    "name": "Kichererbsen-Spinat-Tomaten-Eintopf",
+    "category": "Abendessen",
+    "prep_time": "25 Min",
+    "diets": [
+      "All",
+      "Vegan",
+      "Vegetarisch",
+      "All",
+      "High-Protein",
+      "Sparfuchs"
+    ],
+    "ingredients": {
+      "Kichererbsen": 180,
+      "Spinat": 120,
+      "passierte Tomaten": 180,
+      "Zwiebeln": 50,
+      "Knoblauch": 8,
+      "Kreuzkümmel": 2,
+      "Olivenöl": 10,
+      "Salz": 2,
+      "Chiliflocken": 1
+    },
+    "macros": {
+      "calories": 400,
+      "protein": 20,
+      "carbs": 48,
+      "fat": 12,
+      "fiber": 14
+    },
+    "instructions": [
+      "Zwiebel und Knoblauch in Öl, Gewürze 30 Sek.",
+      "Tomaten und Kichererbsen 12 Min köcheln.",
+      "Spinat unterheben, salzen."
+    ],
+    "icon": "🍲"
+  },
+  {
+    "id": "rec_80",
+    "name": "Lachs-Spinat-Sahne (Low Carb)",
+    "category": "Abendessen",
+    "prep_time": "20 Min",
+    "diets": [
+      "All",
+      "High-Protein",
+      "All",
+      "High-Protein",
+      "Low-Carb"
+    ],
+    "ingredients": {
+      "Lachsfilet": 170,
+      "Spinat": 150,
+      "Sahne": 60,
+      "Knoblauch": 5,
+      "Zitrone": 0.4,
+      "Olivenöl": 8,
+      "Salz": 2,
+      "Pfeffer": 1,
+      "Dill": 4
+    },
+    "macros": {
+      "calories": 520,
+      "protein": 38,
+      "carbs": 6,
+      "fat": 38,
+      "fiber": 3
+    },
+    "instructions": [
+      "Lachs in Öl 4 Min je Seite, ruhen.",
+      "Knoblauch und Spinat, Sahne einkochen, Dill, Zitrone, Salz, Pfeffer.",
+      "Lachs in die Sauce setzen."
+    ],
+    "icon": "🐟"
+  },
+  {
+    "id": "rec_81",
+    "name": "Bauernfrühstück (Mittag)",
+    "category": "Mittagessen",
+    "prep_time": "25 Min",
+    "diets": [
+      "All",
+      "Vegetarisch",
+      "All",
+      "High-Protein",
+      "Sparfuchs"
+    ],
+    "ingredients": {
+      "Kartoffeln": 250,
+      "Eier": 2,
+      "Zwiebeln": 50,
+      "Paprika rot": 80,
+      "Olivenöl": 10,
+      "Salz": 2,
+      "Pfeffer": 1,
+      "Petersilie": 5
+    },
+    "macros": {
+      "calories": 480,
+      "protein": 20,
+      "carbs": 52,
+      "fat": 20,
+      "fiber": 6
+    },
+    "instructions": [
+      "Kartoffeln in Würfeln in Öl knusprig braten (12 Min).",
+      "Zwiebel und Paprika 4 Min mitbraten.",
+      "Eier verquirlt darüber, stocken lassen, Kräuter, Salz, Pfeffer."
+    ],
+    "icon": "🥔"
+  },
+  {
+    "id": "rec_82",
+    "name": "Hähnchen-Mais-Reis-Bowl",
+    "category": "Mittagessen",
+    "prep_time": "25 Min",
+    "diets": [
+      "All",
+      "High-Protein",
+      "Sparfuchs"
+    ],
+    "ingredients": {
+      "Hähnchenbrust": 170,
+      "Reis": 80,
+      "Mais (Dose)": 80,
+      "Paprika-Mix": 80,
+      "Olivenöl": 8,
+      "Paprikapulver": 2,
+      "Salz": 2,
+      "Limette": 0.5
+    },
+    "macros": {
+      "calories": 540,
+      "protein": 42,
+      "carbs": 64,
+      "fat": 10,
+      "fiber": 5
+    },
+    "instructions": [
+      "Reis kochen. Hähnchen würzen und braten.",
+      "Paprika kurz braten, Mais dazu.",
+      "In der Bowl mit Limette anrichten."
+    ],
+    "icon": "🍚"
+  },
+  {
+    "id": "rec_83",
+    "name": "Mediterrane Linsen mit Ofentomaten",
+    "category": "Abendessen",
+    "prep_time": "30 Min",
+    "diets": [
+      "All",
+      "Vegan",
+      "Vegetarisch",
+      "Clean",
+      "Sparfuchs"
+    ],
+    "ingredients": {
+      "Rote Linsen": 90,
+      "Cherrytomaten": 150,
+      "Zwiebeln": 40,
+      "Knoblauch": 6,
+      "Olivenöl": 12,
+      "Oregano": 2,
+      "Essig": 10,
+      "Salz": 2,
+      "Pfeffer": 1,
+      "Petersilie": 5
+    },
+    "macros": {
+      "calories": 410,
+      "protein": 20,
+      "carbs": 54,
+      "fat": 12,
+      "fiber": 12
+    },
+    "instructions": [
+      "Tomaten mit Öl, Oregano, Salz 15 Min bei 200 °C rösten.",
+      "Linsen mit Zwiebel und Knoblauch weich kochen.",
+      "Tomaten unterheben, Essig, Petersilie, Pfeffer."
+    ],
+    "icon": "🥗"
+  },
+  {
+    "id": "rec_84",
+    "name": "Quark-Kräuter-Kartoffeln",
+    "category": "Abendessen",
+    "prep_time": "25 Min",
+    "diets": [
+      "All",
+      "Vegetarisch",
+      "All",
+      "High-Protein",
+      "Sparfuchs"
+    ],
+    "ingredients": {
+      "Kartoffeln": 250,
+      "Magerquark": 200,
+      "Naturjoghurt": 40,
+      "Gurke": 80,
+      "Zwiebeln": 20,
+      "Dill": 5,
+      "Salz": 2,
+      "Pfeffer": 1,
+      "Olivenöl": 5
+    },
+    "macros": {
+      "calories": 430,
+      "protein": 32,
+      "carbs": 58,
+      "fat": 6,
+      "fiber": 6
+    },
+    "instructions": [
+      "Kartoffeln in der Schale kochen.",
+      "Quark, Joghurt, Gurke, Zwiebel, Dill, Salz, Pfeffer, Öl zu Dip rühren.",
+      "Heiße Kartoffeln mit Dip."
+    ],
+    "icon": "🥔"
+  },
+  {
+    "id": "rec_85",
+    "name": "Sesamfreier Tofu-Brokkoli mit Ingwer-Reis",
+    "category": "Mittagessen",
+    "prep_time": "25 Min",
+    "diets": [
+      "All",
+      "Vegan",
+      "Vegetarisch",
+      "All",
+      "High-Protein",
+      "Clean"
+    ],
+    "ingredients": {
+      "Bio-Tofu": 180,
+      "Brokkoli": 180,
+      "Reis": 80,
+      "Ingwer": 10,
+      "Knoblauch": 5,
+      "Sojasauce": 18,
+      "Olivenöl": 10,
+      "Chiliflocken": 1,
+      "Pfeffer": 1
+    },
+    "macros": {
+      "calories": 520,
+      "protein": 30,
+      "carbs": 58,
+      "fat": 16,
+      "fiber": 8
+    },
+    "instructions": [
+      "Reis mit geriebenem Ingwer kochen.",
+      "Tofu in Öl knusprig, Brokkoli 4 Min mitbraten.",
+      "Knoblauch, Sojasauce, Chili 1 Min einkochen, über den Reis."
+    ],
+    "icon": "🥦"
   }
 ]

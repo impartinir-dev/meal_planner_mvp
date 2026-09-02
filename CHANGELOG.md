@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.0 — 2026-09-02
+
+- Never-again: ban a recipe immediately; it is swapped off this week and never planned again.
+- Cooked / skipped flags on each meal (no need to have cooked it first).
+- Household members, each with own kcal/protein.
+- Mifflin–St Jeor calorie & protein calculator (sex, age, height, weight, activity, goal).
+- 40 additional complete recipes (spices, numbered steps). Catalog now 85.
+
 ## 0.2.0 — 2026-09-02
 
 - SemVer starts here (`v0.2.0`).

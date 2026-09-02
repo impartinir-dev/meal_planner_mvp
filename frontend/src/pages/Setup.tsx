@@ -2,7 +2,9 @@ import { useEffect, useState, type FormEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ArrowLeft, ArrowRight, Sparkles, Tag } from 'lucide-react'
 import { api } from '../api'
-import type { Meta, PlanPayload, Prefs } from '../types'
+import type { HouseholdMember, Meta, PlanPayload, Prefs } from '../types'
+
+const DEFAULT_MEMBER: HouseholdMember = { id: 'self', name: 'Ich', calories: 2200, protein: 140 }
 
 const DEFAULT: Prefs = {
   store: 'Lidl',
@@ -14,6 +16,18 @@ const DEFAULT: Prefs = {
   pantry: ['Olivenöl', 'Reis', 'Haferflocken'],
   portions: 1,
   exclude: [],
+  members: [DEFAULT_MEMBER],
+}
+
+function withMembers(members: HouseholdMember[]): Pick<Prefs, 'members' | 'portions' | 'calories' | 'protein'> {
+  const list = members.length ? members : [DEFAULT_MEMBER]
+  const n = list.length
+  return {
+    members: list,
+    portions: n,
+    calories: Math.round(list.reduce((s, m) => s + m.calories, 0) / n),
+    protein: Math.round(list.reduce((s, m) => s + m.protein, 0) / n),
+  }
 }
 
 export default function Setup() {
@@ -30,7 +44,10 @@ export default function Setup() {
       setMeta(m)
       try {
         const existing = await api<PlanPayload>('/api/plan')
-        setPrefs({ ...DEFAULT, ...existing.prefs, exclude: existing.prefs.exclude || [] })
+        const members = existing.prefs.members?.length
+          ? existing.prefs.members
+          : [{ id: 'self', name: 'Ich', calories: existing.prefs.calories, protein: existing.prefs.protein }]
+        setPrefs({ ...DEFAULT, ...existing.prefs, exclude: existing.prefs.exclude || [], ...withMembers(members) })
       } catch {
         /* no plan yet */
       }
@@ -180,29 +197,16 @@ export default function Setup() {
                     </button>
                   ))}
                 </div>
-                <span className="text-xs font-bold uppercase tracking-wider text-ink-muted block pt-2">Portionen</span>
-                <div className="grid grid-cols-4 gap-2">
-                  {[1, 2, 3, 4].map((p) => (
-                    <button
-                      key={p}
-                      type="button"
-                      onClick={() => setPrefs({ ...prefs, portions: p })}
-                      className={`py-2 rounded-xl border text-xs font-bold ${prefs.portions === p ? 'bg-stone-900 text-white border-stone-900' : 'border-stone-200'}`}
-                    >
-                      {p}
-                    </button>
-                  ))}
-                </div>
               </div>
               <div className="space-y-3">
                 <div className="flex justify-between">
-                  <span className="text-xs font-bold uppercase tracking-wider text-ink-muted">Wochenbudget</span>
+                  <span className="text-xs font-bold uppercase tracking-wider text-ink-muted">Wochenbudget (Haushalt)</span>
                   <span className="text-lg font-extrabold text-brand font-mono">{prefs.budget} €</span>
                 </div>
                 <input
                   type="range"
                   min={15}
-                  max={150}
+                  max={250}
                   step={5}
                   value={prefs.budget}
                   onChange={(e) => setPrefs({ ...prefs, budget: Number(e.target.value) })}
@@ -210,22 +214,7 @@ export default function Setup() {
                 />
               </div>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="p-5 rounded-2xl bg-stone-50 border border-stone-200/70 space-y-3">
-                <div className="flex justify-between text-xs font-bold">
-                  <span>Tageskalorien</span>
-                  <span className="font-mono">{prefs.calories} kcal</span>
-                </div>
-                <input type="range" min={1400} max={3600} step={50} value={prefs.calories} onChange={(e) => setPrefs({ ...prefs, calories: Number(e.target.value) })} className="w-full accent-amber-600" />
-              </div>
-              <div className="p-5 rounded-2xl bg-stone-50 border border-stone-200/70 space-y-3">
-                <div className="flex justify-between text-xs font-bold">
-                  <span>Tagesprotein</span>
-                  <span className="font-mono text-brand">{prefs.protein} g</span>
-                </div>
-                <input type="range" min={60} max={240} step={5} value={prefs.protein} onChange={(e) => setPrefs({ ...prefs, protein: Number(e.target.value) })} className="w-full accent-brand" />
-              </div>
-            </div>
+            <HouseholdEditor prefs={prefs} setPrefs={setPrefs} meta={meta} />
             <div className="flex justify-between">
               <button type="button" onClick={() => setStep(1)} className="px-5 py-3 rounded-xl border border-stone-200 text-xs font-bold flex items-center gap-1.5">
                 <ArrowLeft className="w-4 h-4" /> Zurück
@@ -280,6 +269,160 @@ export default function Setup() {
           </div>
         )}
       </form>
+    </div>
+  )
+}
+
+function HouseholdEditor({
+  prefs,
+  setPrefs,
+  meta,
+}: {
+  prefs: Prefs
+  setPrefs: (p: Prefs) => void
+  meta: Meta
+}) {
+  const members = prefs.members?.length ? prefs.members : [DEFAULT_MEMBER]
+  const [openCalc, setOpenCalc] = useState<string | null>(null)
+
+  function commit(next: HouseholdMember[]) {
+    setPrefs({ ...prefs, ...withMembers(next) })
+  }
+
+  return (
+    <div className="space-y-3 pt-2 border-t border-stone-100">
+      <div className="flex items-center justify-between">
+        <span className="text-xs font-bold uppercase tracking-wider text-ink-muted">Personen im Haushalt</span>
+        <button
+          type="button"
+          disabled={members.length >= 6}
+          onClick={() =>
+            commit([...members, { id: `m${Date.now()}`, name: `Person ${members.length + 1}`, calories: 2000, protein: 120 }])
+          }
+          className="text-xs font-bold text-brand"
+        >
+          + Person
+        </button>
+      </div>
+      <p className="text-xs text-ink-muted">
+        Jede Person hat eigene kcal/Protein. Gekocht wird {members.length} Portion{members.length > 1 ? 'en' : ''}; der Plan zielt auf den Durchschnitt ({prefs.calories} kcal / {prefs.protein} g).
+      </p>
+      {members.map((m) => (
+        <div key={m.id} className="p-4 rounded-2xl border border-stone-200 space-y-3 bg-stone-50/80">
+          <div className="flex gap-2">
+            <input
+              value={m.name}
+              onChange={(e) => commit(members.map((x) => (x.id === m.id ? { ...x, name: e.target.value } : x)))}
+              className="flex-1 rounded-xl border border-stone-200 px-3 py-2 text-sm font-semibold"
+            />
+            {members.length > 1 && (
+              <button type="button" className="text-xs text-red-700 font-bold" onClick={() => commit(members.filter((x) => x.id !== m.id))}>
+                Entfernen
+              </button>
+            )}
+          </div>
+          <div className="grid grid-cols-2 gap-3">
+            <label className="text-[11px] font-bold text-ink-muted">
+              kcal
+              <input
+                type="number"
+                min={1200}
+                max={4000}
+                step={50}
+                value={m.calories}
+                onChange={(e) => commit(members.map((x) => (x.id === m.id ? { ...x, calories: Number(e.target.value) } : x)))}
+                className="mt-1 w-full rounded-lg border px-2 py-1.5 font-mono text-sm"
+              />
+            </label>
+            <label className="text-[11px] font-bold text-ink-muted">
+              Protein g
+              <input
+                type="number"
+                min={50}
+                max={250}
+                step={5}
+                value={m.protein}
+                onChange={(e) => commit(members.map((x) => (x.id === m.id ? { ...x, protein: Number(e.target.value) } : x)))}
+                className="mt-1 w-full rounded-lg border px-2 py-1.5 font-mono text-sm"
+              />
+            </label>
+          </div>
+          <button type="button" className="text-xs font-bold text-brand" onClick={() => setOpenCalc(openCalc === m.id ? null : m.id)}>
+            {openCalc === m.id ? 'Rechner schließen' : 'Bedarf berechnen (Alter, Gewicht, Sport)'}
+          </button>
+          {openCalc === m.id && (
+            <CalculatorForm
+              onApply={(calories, protein) => {
+                commit(members.map((x) => (x.id === m.id ? { ...x, calories, protein } : x)))
+                setOpenCalc(null)
+              }}
+              meta={meta}
+            />
+          )}
+        </div>
+      ))}
+    </div>
+  )
+}
+
+function CalculatorForm({
+  onApply,
+  meta,
+}: {
+  onApply: (calories: number, protein: number) => void
+  meta: Meta
+}) {
+  const [sex, setSex] = useState('female')
+  const [age, setAge] = useState('32')
+  const [height, setHeight] = useState('170')
+  const [weight, setWeight] = useState('70')
+  const [activity, setActivity] = useState('moderate')
+  const [goal, setGoal] = useState('maintain')
+  const [result, setResult] = useState<{ calories: number; protein: number; tdee: number; bmr: number } | null>(null)
+  const [err, setErr] = useState('')
+
+  async function run() {
+    setErr('')
+    try {
+      const data = await api<{ calories: number; protein: number; tdee: number; bmr: number }>('/api/calculator', {
+        method: 'POST',
+        json: { sex, age: Number(age), height_cm: Number(height), weight_kg: Number(weight), activity, goal },
+      })
+      setResult(data)
+    } catch {
+      setErr('Bitte Angaben prüfen.')
+    }
+  }
+
+  return (
+    <div className="space-y-2 text-xs bg-white rounded-xl border border-stone-200 p-3">
+      <div className="grid grid-cols-2 gap-2">
+        <select value={sex} onChange={(e) => setSex(e.target.value)} className="border rounded-lg px-2 py-1.5">
+          <option value="female">Frau</option>
+          <option value="male">Mann</option>
+        </select>
+        <select value={goal} onChange={(e) => setGoal(e.target.value)} className="border rounded-lg px-2 py-1.5">
+          {(meta.goals || [{ id: 'maintain', name: 'Halten' }]).map((g) => (
+            <option key={g.id} value={g.id}>{g.name}</option>
+          ))}
+        </select>
+        <label>Alter <input value={age} onChange={(e) => setAge(e.target.value)} className="border rounded-lg px-2 py-1 w-full" /></label>
+        <label>Größe cm <input value={height} onChange={(e) => setHeight(e.target.value)} className="border rounded-lg px-2 py-1 w-full" /></label>
+        <label>Gewicht kg <input value={weight} onChange={(e) => setWeight(e.target.value)} className="border rounded-lg px-2 py-1 w-full" /></label>
+        <select value={activity} onChange={(e) => setActivity(e.target.value)} className="border rounded-lg px-2 py-1.5">
+          {(meta.activity_levels || []).map((a) => (
+            <option key={a.id} value={a.id}>{a.name}</option>
+          ))}
+        </select>
+      </div>
+      <button type="button" onClick={() => void run()} className="px-3 py-1.5 rounded-lg bg-stone-900 text-white font-bold">Berechnen</button>
+      {err && <p className="text-red-700">{err}</p>}
+      {result && (
+        <div className="flex items-center justify-between gap-2">
+          <span>Grundumsatz {result.bmr} · Verbrauch {result.tdee} → <b>{result.calories} kcal / {result.protein} g Protein</b></span>
+          <button type="button" className="font-bold text-brand" onClick={() => onApply(result.calories, result.protein)}>Übernehmen</button>
+        </div>
+      )}
     </div>
   )
 }
