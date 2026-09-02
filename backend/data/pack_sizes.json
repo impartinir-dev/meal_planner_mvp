@@ -1,0 +1,367 @@
+{
+  "Brokkoli": {
+    "pack_size": 350,
+    "unit": "g",
+    "aisle": "Obst & Gemüse"
+  },
+  "Spinat": {
+    "pack_size": 200,
+    "unit": "g",
+    "aisle": "Obst & Gemüse"
+  },
+  "Karotten": {
+    "pack_size": 500,
+    "unit": "g",
+    "aisle": "Obst & Gemüse"
+  },
+  "Zwiebeln": {
+    "pack_size": 500,
+    "unit": "g",
+    "aisle": "Obst & Gemüse"
+  },
+  "Knoblauch": {
+    "pack_size": 50,
+    "unit": "g",
+    "aisle": "Obst & Gemüse"
+  },
+  "Eisbergsalat": {
+    "pack_size": 300,
+    "unit": "g",
+    "aisle": "Obst & Gemüse"
+  },
+  "Tomaten": {
+    "pack_size": 500,
+    "unit": "g",
+    "aisle": "Obst & Gemüse"
+  },
+  "Cherrytomaten": {
+    "pack_size": 250,
+    "unit": "g",
+    "aisle": "Obst & Gemüse"
+  },
+  "Zucchini": {
+    "pack_size": 300,
+    "unit": "g",
+    "aisle": "Obst & Gemüse"
+  },
+  "Bananen": {
+    "pack_size": 150,
+    "unit": "g",
+    "aisle": "Obst & Gemüse"
+  },
+  "Avocado": {
+    "pack_size": 1,
+    "unit": "Stück",
+    "aisle": "Obst & Gemüse"
+  },
+  "Paprika-Mix": {
+    "pack_size": 400,
+    "unit": "g",
+    "aisle": "Obst & Gemüse"
+  },
+  "Süßkartoffel": {
+    "pack_size": 500,
+    "unit": "g",
+    "aisle": "Obst & Gemüse"
+  },
+  "Beeren (TK)": {
+    "pack_size": 300,
+    "unit": "g",
+    "aisle": "Kühlregal & Tiefkühl"
+  },
+  "Magerquark": {
+    "pack_size": 250,
+    "unit": "g",
+    "aisle": "Kühlregal & Molkerei"
+  },
+  "Milch": {
+    "pack_size": 1000,
+    "unit": "g",
+    "aisle": "Kühlregal & Molkerei"
+  },
+  "Joghurt": {
+    "pack_size": 500,
+    "unit": "g",
+    "aisle": "Kühlregal & Molkerei"
+  },
+  "Naturjoghurt": {
+    "pack_size": 500,
+    "unit": "g",
+    "aisle": "Kühlregal & Molkerei"
+  },
+  "Feta / Hirtenkäse": {
+    "pack_size": 200,
+    "unit": "g",
+    "aisle": "Kühlregal & Molkerei"
+  },
+  "Parmesan": {
+    "pack_size": 100,
+    "unit": "g",
+    "aisle": "Kühlregal & Molkerei"
+  },
+  "Eier": {
+    "pack_size": 6,
+    "unit": "Stück",
+    "aisle": "Kühlregal & Molkerei"
+  },
+  "Hähnchenbrust": {
+    "pack_size": 400,
+    "unit": "g",
+    "aisle": "Fleisch, Fisch & Tofu"
+  },
+  "Putenbrust": {
+    "pack_size": 400,
+    "unit": "g",
+    "aisle": "Fleisch, Fisch & Tofu"
+  },
+  "Rinderhackfleisch": {
+    "pack_size": 400,
+    "unit": "g",
+    "aisle": "Fleisch, Fisch & Tofu"
+  },
+  "Lachsfilet": {
+    "pack_size": 250,
+    "unit": "g",
+    "aisle": "Fleisch, Fisch & Tofu"
+  },
+  "Thunfisch (Dose)": {
+    "pack_size": 150,
+    "unit": "g",
+    "aisle": "Fleisch, Fisch & Tofu"
+  },
+  "Bio-Tofu": {
+    "pack_size": 200,
+    "unit": "g",
+    "aisle": "Fleisch, Fisch & Tofu"
+  },
+  "Reis": {
+    "pack_size": 500,
+    "unit": "g",
+    "aisle": "Vorratskammer & Trocken"
+  },
+  "Haferflocken": {
+    "pack_size": 500,
+    "unit": "g",
+    "aisle": "Vorratskammer & Trocken"
+  },
+  "Vollkornpasta": {
+    "pack_size": 500,
+    "unit": "g",
+    "aisle": "Vorratskammer & Trocken"
+  },
+  "Rote Linsen": {
+    "pack_size": 500,
+    "unit": "g",
+    "aisle": "Vorratskammer & Trocken"
+  },
+  "Kichererbsen": {
+    "pack_size": 400,
+    "unit": "g",
+    "aisle": "Vorratskammer & Trocken"
+  },
+  "Kidneybohnen": {
+    "pack_size": 400,
+    "unit": "g",
+    "aisle": "Vorratskammer & Trocken"
+  },
+  "passierte Tomaten": {
+    "pack_size": 400,
+    "unit": "g",
+    "aisle": "Vorratskammer & Trocken"
+  },
+  "Gemüsebrühe": {
+    "pack_size": 500,
+    "unit": "g",
+    "aisle": "Vorratskammer & Trocken"
+  },
+  "Olivenöl": {
+    "pack_size": 250,
+    "unit": "ml",
+    "aisle": "Vorratskammer & Trocken"
+  },
+  "Sojasauce": {
+    "pack_size": 150,
+    "unit": "ml",
+    "aisle": "Vorratskammer & Trocken"
+  },
+  "Erdnussbutter": {
+    "pack_size": 350,
+    "unit": "g",
+    "aisle": "Vorratskammer & Trocken"
+  },
+  "Chia-Samen": {
+    "pack_size": 200,
+    "unit": "g",
+    "aisle": "Vorratskammer & Trocken"
+  },
+  "Haferdrink": {
+    "pack_size": 1000,
+    "unit": "g",
+    "aisle": "Kühlregal & Molkerei"
+  },
+  "Kartoffeln": {
+    "pack_size": 1000,
+    "unit": "g",
+    "aisle": "Obst & Gemüse"
+  },
+  "Hüttenkäse": {
+    "pack_size": 200,
+    "unit": "g",
+    "aisle": "Kühlregal & Molkerei"
+  },
+  "Vollkornbrot": {
+    "pack_size": 500,
+    "unit": "g",
+    "aisle": "Vorratskammer & Trocken"
+  },
+  "Champignons": {
+    "pack_size": 250,
+    "unit": "g",
+    "aisle": "Obst & Gemüse"
+  },
+  "Gurke": {
+    "pack_size": 300,
+    "unit": "g",
+    "aisle": "Obst & Gemüse"
+  },
+  "Zitrone": {
+    "pack_size": 1,
+    "unit": "Stück",
+    "aisle": "Obst & Gemüse"
+  },
+  "TK-Erbsen": {
+    "pack_size": 450,
+    "unit": "g",
+    "aisle": "Kühlregal & Tiefkühl"
+  },
+  "Äpfel": {
+    "pack_size": 150,
+    "unit": "g",
+    "aisle": "Obst & Gemüse"
+  },
+  "Paprikapulver": {
+    "pack_size": 50,
+    "unit": "g",
+    "aisle": "Vorratskammer & Trocken"
+  },
+  "Salz": {
+    "pack_size": 500,
+    "unit": "g",
+    "aisle": "Vorratskammer & Trocken"
+  },
+  "Pfeffer": {
+    "pack_size": 50,
+    "unit": "g",
+    "aisle": "Vorratskammer & Trocken"
+  },
+  "Kurkuma": {
+    "pack_size": 40,
+    "unit": "g",
+    "aisle": "Vorratskammer & Trocken"
+  },
+  "Kreuzkümmel": {
+    "pack_size": 40,
+    "unit": "g",
+    "aisle": "Vorratskammer & Trocken"
+  },
+  "Oregano": {
+    "pack_size": 20,
+    "unit": "g",
+    "aisle": "Vorratskammer & Trocken"
+  },
+  "Basilikum": {
+    "pack_size": 20,
+    "unit": "g",
+    "aisle": "Vorratskammer & Trocken"
+  },
+  "Zimt": {
+    "pack_size": 40,
+    "unit": "g",
+    "aisle": "Vorratskammer & Trocken"
+  },
+  "Chiliflocken": {
+    "pack_size": 30,
+    "unit": "g",
+    "aisle": "Vorratskammer & Trocken"
+  },
+  "Petersilie": {
+    "pack_size": 30,
+    "unit": "g",
+    "aisle": "Obst & Gemüse"
+  },
+  "Dill": {
+    "pack_size": 30,
+    "unit": "g",
+    "aisle": "Obst & Gemüse"
+  },
+  "Honig": {
+    "pack_size": 250,
+    "unit": "g",
+    "aisle": "Vorratskammer & Trocken"
+  },
+  "Senf": {
+    "pack_size": 150,
+    "unit": "g",
+    "aisle": "Vorratskammer & Trocken"
+  },
+  "Essig": {
+    "pack_size": 500,
+    "unit": "ml",
+    "aisle": "Vorratskammer & Trocken"
+  },
+  "Butter": {
+    "pack_size": 250,
+    "unit": "g",
+    "aisle": "Kühlregal & Molkerei"
+  },
+  "Sahne": {
+    "pack_size": 200,
+    "unit": "g",
+    "aisle": "Kühlregal & Molkerei"
+  },
+  "Ingwer": {
+    "pack_size": 100,
+    "unit": "g",
+    "aisle": "Obst & Gemüse"
+  },
+  "Kokosmilch": {
+    "pack_size": 400,
+    "unit": "g",
+    "aisle": "Vorratskammer & Trocken"
+  },
+  "Lauch": {
+    "pack_size": 300,
+    "unit": "g",
+    "aisle": "Obst & Gemüse"
+  },
+  "Sellerie": {
+    "pack_size": 400,
+    "unit": "g",
+    "aisle": "Obst & Gemüse"
+  },
+  "Blumenkohl": {
+    "pack_size": 500,
+    "unit": "g",
+    "aisle": "Obst & Gemüse"
+  },
+  "Couscous": {
+    "pack_size": 500,
+    "unit": "g",
+    "aisle": "Vorratskammer & Trocken"
+  },
+  "Mais (Dose)": {
+    "pack_size": 300,
+    "unit": "g",
+    "aisle": "Vorratskammer & Trocken"
+  },
+  "Limette": {
+    "pack_size": 1,
+    "unit": "Stück",
+    "aisle": "Obst & Gemüse"
+  },
+  "Paprika rot": {
+    "pack_size": 200,
+    "unit": "g",
+    "aisle": "Obst & Gemüse"
+  }
+}

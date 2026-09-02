@@ -1,68 +1,64 @@
-# NutriMatch DE 🍃
+# NutriMatch DE
 
-> **Smarter Wocheneinkauf nach deutschen Supermarkt-Angeboten & Zero Food Waste**
+**Version 0.4.0** — Invite-only Wochenplaner. Nur noch Rezepte mit echten Schritten, jedes Gericht höchstens einmal pro Woche.
 
-NutriMatch ist eine moderne Web-Applikation, die gesunde, makro-optimierte Wochen-Ernährungspläne (High-Protein, Vegan, Vegetarisch, Low-Carb etc.) mit den **aktuellen Prospekt-Angeboten deutscher Supermärkte** (REWE, Lidl, ALDI Süd, Kaufland, EDEKA) abgleicht. Durch einen **digitalen Vorratsschrank** werden vorhandene Lebensmittel automatisch angerechnet, um Lebensmittelverschwendung zu vermeiden und den wöchentlichen Kassenbon drastisch zu senken.
+Invite-only Wochenplaner: Mahlzeiten nach **Ernährungsziel, Budget und kuratierten Supermarkt-Angeboten** (REWE, Lidl, ALDI Süd, Kaufland, EDEKA). Der Einkaufszettel rechnet in **kaufbaren Packungen** und lässt Vorräte weg.
 
----
+Angebote kommen aus `backend/data/deals.json` mit einem KW-Label (z. B. `2026-W36`) — kein Live-Scraping.
 
-## 🌟 Highlights
+## Lokal starten
 
-- **3-Schritte-Konfigurator:** Fokussierte Kacheln für Supermarkt, Ernährungsziel & Wochenbudget sowie Vorratsschrank.
-- **Wochen-Deals („Prospekt-Knaller“):** Automatische Priorisierung rabattierter Produkte mit Kennzeichnung der Ersparnis.
-- **Makro-Feintuning:** Individuelle Schieberegler für **Tageskalorien** (kcal) und **Tagesprotein** (g) mit Soll/Ist-Vergleich im Wochenplan.
-- **Zero Food Waste (Digitaler Vorratsschrank):** Vorhandene Grundzutaten (z.B. Olivenöl, Reis, Haferflocken) werden vom Kassenpreis abgezogen.
-- **Ruhiges Wochenplan-Dashboard:** Klare Wochentags-Ansicht (Mo–So) mit 3 vollwertigen Mahlzeiten (Frühstück, Mittag, Abend) und 1-Klick-Rezept-Tausch.
-- **Smarter Einkaufszettel:** Sortiert nach deutschen Supermarkt-Gängen (*Obst & Gemüse, Kühlregal, Fleisch/Alternativen, Trockensortiment*) mit bequemen Checkboxen und WhatsApp-Export.
-- **Senior Minimalist Design:** Warmes Stein-Design (`#FBFBFA`), feine Hairline-Borders und dezente Vektor-Iconography.
-
----
-
-## 🛠️ Tech Stack
-
-- **Backend:** Python 3, Flask, In-Memory Session Cache
-- **Frontend:** HTML5, Jinja2 Templates, Tailwind CSS, Lucide Vector Icons
-- **Data Layer:** JSON-basierte Preismatrizen und Angebote deutscher Supermärkte
-
----
-
-## 🚀 Schnellstart
-
-### 1. Repository klonen
 ```bash
-git clone https://github.com/<dein-user>/meal_planner_mvp.git
-cd meal_planner_mvp
+pip install -r backend/requirements.txt
+python -m backend.seed
 ```
 
-### 2. Abhängigkeiten installieren
+Terminal 1:
+
 ```bash
-pip install -r requirements.txt
+set PYTHONPATH=.
+flask --app backend run --port 5000
 ```
 
-### 3. Server starten
+(PowerShell: `$env:PYTHONPATH = "."`)
+
+Terminal 2:
+
 ```bash
-python app.py
+cd frontend
+npm install
+npm run dev
 ```
 
-Die App ist nun erreichbar unter: **[http://127.0.0.1:5000](http://127.0.0.1:5000)**
+App: http://127.0.0.1:5173
 
----
+Standard-Admin (änderbar über Env):
 
-## 📂 Projektstruktur
+- `ADMIN_EMAIL` (default `admin@localhost`)
+- `ADMIN_PASSWORD` (default `changeme-now`)
 
+`python -m backend.seed` legt den Admin an und druckt Einladungscodes.
+
+## Docker
+
+```bash
+docker compose up --build
 ```
-meal_planner_mvp/
-├── app.py                # Flask Backend & Routing
-├── algorithm.py          # Smarter Optimierungs- und Matchmaking-Algorithmus
-├── requirements.txt      # Python Abhängigkeiten
-├── .gitignore
-├── data/
-│   ├── deals.json        # Aktuelle Wochen-Angebote je Supermarkt
-│   ├── prices.json       # Grundpreismatrix der Märkte
-│   └── recipes.json      # Nährwert- und makrooptimierte Rezeptdatenbank
-└── templates/
-    ├── layout.html       # Minimalistisches Basis-Layout & Header
-    ├── setup.html        # Konfigurator-Kacheln (Markt, Ziel/Makros, Vorrat)
-    ├── plan.html         # Wochenplan-Dashboard mit Tages-Tabs & Tauschfunktion
-    └── einkaufszettel.html# Nach Gängen sortierte Einkaufs-Checkliste
+
+Dann http://127.0.0.1:8000 — zuerst einloggen, unter **Einladungen** Codes erzeugen.
+
+Setze in Produktion unbedingt `SECRET_KEY` und ein eigenes Admin-Passwort.
+
+## Freemium / Pro
+
+- **Free:** Wochenplan, Tausch, Fixieren, Ausschlüsse, Einkaufszettel, Vorrats-Häkchen im Setup.
+- **Pro (4,99 €/Monat):** persistenter Vorratsschrank + Kassenbon-Scan. Der Admin schaltet Konten unter Admin → Pro frei.
+- Kassenbon-OCR braucht `XAI_API_KEY` (SpaceXAI / xAI, Modell grok-4.6).
+
+Admin: **Angebote** = KW-Deals in zehn Minuten aktualisieren. **Admin** = Einladungen, Passwort zurücksetzen, Pro-Toggle.
+
+## Tests
+
+```bash
+python -m pytest tests/ -v
 ```

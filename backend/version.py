@@ -1,0 +1,3 @@
+APP_VERSION = "0.4.0"
+PRO_PRICE_EUR = 4.99
+PRO_PERIOD = "Monat"
