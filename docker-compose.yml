@@ -1,0 +1,14 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      SECRET_KEY: ${SECRET_KEY:-change-me-in-production}
+      ADMIN_EMAIL: ${ADMIN_EMAIL:-admin@localhost}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-changeme-now}
+      COOKIE_SECURE: "0"
+    volumes:
+      - ./backend/instance:/app/backend/instance
+    command: >
+      sh -c "python -m backend.seed && gunicorn -b 0.0.0.0:8000 -w 1 backend.wsgi:app"

@@ -9,3 +9,7 @@ ENV/
 .vscode/
 *.log
 .DS_Store
+backend/instance/
+frontend/node_modules/
+frontend/dist/
+.pytest_cache/

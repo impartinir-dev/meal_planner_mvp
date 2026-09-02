@@ -1,0 +1,1298 @@
+[
+  {
+    "id": "rec_01",
+    "name": "Magerquark Beeren Overnight Oats",
+    "category": "Frühstück",
+    "prep_time": "5 Min",
+    "diets": [
+      "All",
+      "Vegetarisch",
+      "High-Protein",
+      "Clean",
+      "Sparfuchs"
+    ],
+    "ingredients": {
+      "Haferflocken": 80,
+      "Magerquark": 250,
+      "Beeren (TK)": 100,
+      "Milch": 100,
+      "Chia-Samen": 15
+    },
+    "macros": {
+      "calories": 490,
+      "protein": 42,
+      "carbs": 56,
+      "fat": 8,
+      "fiber": 11
+    },
+    "instructions": "Haferflocken mit Magerquark, Milch und Chia-Samen verrühren. Mit den Beeren toppen und über Nacht im Kühlschrank ziehen lassen.",
+    "icon": "🫐"
+  },
+  {
+    "id": "rec_02",
+    "name": "Fitness Rührei mit Tomaten & Feta",
+    "category": "Frühstück",
+    "prep_time": "10 Min",
+    "diets": [
+      "All",
+      "Vegetarisch",
+      "High-Protein",
+      "Low-Carb",
+      "Clean"
+    ],
+    "ingredients": {
+      "Eier": 3,
+      "Cherrytomaten": 100,
+      "Feta / Hirtenkäse": 50,
+      "Spinat": 50,
+      "Olivenöl": 10
+    },
+    "macros": {
+      "calories": 410,
+      "protein": 28,
+      "carbs": 6,
+      "fat": 31,
+      "fiber": 3
+    },
+    "instructions": "Eier verquirlen. Tomaten und Spinat in etwas Olivenöl kurz anbraten, Eier dazugeben und stocken lassen. Zum Schluss Feta darüber bröseln.",
+    "icon": "🍳"
+  },
+  {
+    "id": "rec_03",
+    "name": "Erdnuss-Bananen Power Shake",
+    "category": "Frühstück",
+    "prep_time": "3 Min",
+    "diets": [
+      "All",
+      "Vegetarisch",
+      "High-Protein",
+      "Sparfuchs"
+    ],
+    "ingredients": {
+      "Magerquark": 200,
+      "Bananen": 120,
+      "Haferflocken": 50,
+      "Milch": 200,
+      "Erdnussbutter": 20
+    },
+    "macros": {
+      "calories": 520,
+      "protein": 38,
+      "carbs": 64,
+      "fat": 13,
+      "fiber": 7
+    },
+    "instructions": "Alle Zutaten in den Mixer geben und 45 Sekunden cremig pürieren. Perfekt für unterwegs oder vor dem Sport.",
+    "icon": "🥤"
+  },
+  {
+    "id": "rec_04",
+    "name": "Veganes Tofu-Scramble mit Avocado",
+    "category": "Frühstück",
+    "prep_time": "12 Min",
+    "diets": [
+      "All",
+      "Vegan",
+      "Vegetarisch",
+      "High-Protein",
+      "Clean"
+    ],
+    "ingredients": {
+      "Bio-Tofu": 200,
+      "Avocado": 1,
+      "Cherrytomaten": 80,
+      "Zwiebeln": 30,
+      "Olivenöl": 10
+    },
+    "macros": {
+      "calories": 460,
+      "protein": 27,
+      "carbs": 12,
+      "fat": 34,
+      "fiber": 9
+    },
+    "instructions": "Tofu mit einer Gabel zerbröseln. Zwiebeln anbraten, Tofu mit Kurkuma, Salz und Pfeffer anbraten. Mit frischer Avocado und Tomaten anrichten.",
+    "icon": "🥑"
+  },
+  {
+    "id": "rec_05",
+    "name": "Hähnchen-Brokkoli Reis Bowl",
+    "category": "Mittagessen",
+    "prep_time": "20 Min",
+    "diets": [
+      "All",
+      "High-Protein",
+      "Clean",
+      "Sparfuchs"
+    ],
+    "ingredients": {
+      "Hähnchenbrust": 220,
+      "Reis": 100,
+      "Brokkoli": 180,
+      "Sojasauce": 15,
+      "Olivenöl": 10
+    },
+    "macros": {
+      "calories": 590,
+      "protein": 54,
+      "carbs": 68,
+      "fat": 11,
+      "fiber": 6
+    },
+    "instructions": "Reis kochen. Hähnchenbrust würfeln, scharf anbraten und mit Sojasauce ablöschen. Brokkoli dämpfen oder anbraten. In einer Bowl anrichten.",
+    "icon": "🍗"
+  },
+  {
+    "id": "rec_06",
+    "name": "High-Protein Rote Linsen Curry",
+    "category": "Mittagessen",
+    "prep_time": "25 Min",
+    "diets": [
+      "All",
+      "Vegan",
+      "Vegetarisch",
+      "High-Protein",
+      "Clean",
+      "Sparfuchs"
+    ],
+    "ingredients": {
+      "Rote Linsen": 120,
+      "passierte Tomaten": 150,
+      "Karotten": 100,
+      "Zwiebeln": 50,
+      "Spinat": 80,
+      "Gemüsebrühe": 250,
+      "Olivenöl": 10
+    },
+    "macros": {
+      "calories": 480,
+      "protein": 32,
+      "carbs": 70,
+      "fat": 8,
+      "fiber": 16
+    },
+    "instructions": "Zwiebeln und Karotten würfeln und andünsten. Rote Linsen, passierte Tomaten und Brühe zugeben. 15 Min köcheln, Spinat unterrühren bis er einfällt.",
+    "icon": "🍲"
+  },
+  {
+    "id": "rec_07",
+    "name": "Kichererbsen-Thunfisch Salat",
+    "category": "Mittagessen",
+    "prep_time": "10 Min",
+    "diets": [
+      "All",
+      "High-Protein",
+      "Low-Carb",
+      "Clean",
+      "Sparfuchs"
+    ],
+    "ingredients": {
+      "Thunfisch (Dose)": 150,
+      "Kichererbsen": 120,
+      "Eisbergsalat": 80,
+      "Cherrytomaten": 80,
+      "Zwiebeln": 30,
+      "Olivenöl": 15
+    },
+    "macros": {
+      "calories": 440,
+      "protein": 44,
+      "carbs": 26,
+      "fat": 17,
+      "fiber": 8
+    },
+    "instructions": "Thunfisch und Kichererbsen abtropfen. Salat, Tomaten und Zwiebeln schneiden. Mit etwas Olivenöl, Zitronensaft, Salz und Pfeffer marinieren.",
+    "icon": "🥗"
+  },
+  {
+    "id": "rec_08",
+    "name": "Ofen-Lachs mit Süßkartoffel & Spinat",
+    "category": "Mittagessen",
+    "prep_time": "30 Min",
+    "diets": [
+      "All",
+      "High-Protein",
+      "Clean"
+    ],
+    "ingredients": {
+      "Lachsfilet": 180,
+      "Süßkartoffel": 200,
+      "Spinat": 100,
+      "Knoblauch": 10,
+      "Olivenöl": 10
+    },
+    "macros": {
+      "calories": 580,
+      "protein": 41,
+      "carbs": 48,
+      "fat": 24,
+      "fiber": 7
+    },
+    "instructions": "Süßkartoffel würfeln und bei 200°C 20 Min backen. Lachsfilet würzen und dazulegen. Spinat mit Knoblauch kurz in der Pfanne schwenken.",
+    "icon": "🐟"
+  },
+  {
+    "id": "rec_09",
+    "name": "Low-Carb Zucchini-Rinderhack Pfanne",
+    "category": "Abendessen",
+    "prep_time": "20 Min",
+    "diets": [
+      "All",
+      "High-Protein",
+      "Low-Carb",
+      "Clean"
+    ],
+    "ingredients": {
+      "Rinderhackfleisch": 180,
+      "Zucchini": 200,
+      "Paprika-Mix": 100,
+      "Zwiebeln": 50,
+      "Olivenöl": 10
+    },
+    "macros": {
+      "calories": 490,
+      "protein": 40,
+      "carbs": 14,
+      "fat": 30,
+      "fiber": 5
+    },
+    "instructions": "Hackfleisch in einer heißen Pfanne krümelig anbraten. Zwiebeln, Paprika und Zucchini hinzugeben. Kräftig mit Paprikapulver, Salz und Pfeffer abschmecken.",
+    "icon": "🥩"
+  },
+  {
+    "id": "rec_10",
+    "name": "Vollkornpasta mit Tomaten-Tofu Bolognese",
+    "category": "Abendessen",
+    "prep_time": "25 Min",
+    "diets": [
+      "All",
+      "Vegan",
+      "Vegetarisch",
+      "High-Protein",
+      "Clean",
+      "Sparfuchs"
+    ],
+    "ingredients": {
+      "Vollkornpasta": 100,
+      "Bio-Tofu": 150,
+      "passierte Tomaten": 180,
+      "Karotten": 70,
+      "Zwiebeln": 40,
+      "Knoblauch": 10,
+      "Olivenöl": 10
+    },
+    "macros": {
+      "calories": 560,
+      "protein": 34,
+      "carbs": 76,
+      "fat": 13,
+      "fiber": 14
+    },
+    "instructions": "Pasta kochen. Tofu zerbröseln und scharf anbraten. Karotten, Zwiebeln und Knoblauch andünsten, mit passierten Tomaten einkochen und Pasta untermischen.",
+    "icon": "🍝"
+  },
+  {
+    "id": "rec_11",
+    "name": "Cremige Quark-Kartoffel Bowl",
+    "category": "Abendessen",
+    "prep_time": "20 Min",
+    "diets": [
+      "All",
+      "Vegetarisch",
+      "High-Protein",
+      "Clean",
+      "Sparfuchs"
+    ],
+    "ingredients": {
+      "Magerquark": 250,
+      "Süßkartoffel": 200,
+      "Naturjoghurt": 50,
+      "Zwiebeln": 30,
+      "Cherrytomaten": 80
+    },
+    "macros": {
+      "calories": 430,
+      "protein": 36,
+      "carbs": 58,
+      "fat": 4,
+      "fiber": 6
+    },
+    "instructions": "Süßkartoffeln kochen oder backen. Magerquark mit Naturjoghurt, feingehackten Zwiebeln und Kräutern cremig rühren. Mit frischen Tomaten servieren.",
+    "icon": "🍠"
+  },
+  {
+    "id": "rec_12",
+    "name": "Knuspriges Chili Sin Carne",
+    "category": "Abendessen",
+    "prep_time": "25 Min",
+    "diets": [
+      "All",
+      "Vegan",
+      "Vegetarisch",
+      "High-Protein",
+      "Sparfuchs"
+    ],
+    "ingredients": {
+      "Kidneybohnen": 150,
+      "passierte Tomaten": 150,
+      "Paprika-Mix": 120,
+      "Bio-Tofu": 120,
+      "Zwiebeln": 40,
+      "Olivenöl": 10
+    },
+    "macros": {
+      "calories": 470,
+      "protein": 33,
+      "carbs": 48,
+      "fat": 14,
+      "fiber": 17
+    },
+    "instructions": "Tofu krümeln und scharf anrösten. Paprika und Zwiebeln zugeben. Bohnen und passierte Tomaten einrühren, mit Kreuzkümmel und Chili pikant abschmecken.",
+    "icon": "🌶️"
+  },
+  {
+    "id": "rec_13",
+    "name": "Putensteak mit gegrillter Zucchini & Reis",
+    "category": "Mittagessen",
+    "prep_time": "20 Min",
+    "diets": [
+      "All",
+      "High-Protein",
+      "Clean"
+    ],
+    "ingredients": {
+      "Putenbrust": 200,
+      "Reis": 90,
+      "Zucchini": 150,
+      "Olivenöl": 10,
+      "Knoblauch": 5
+    },
+    "macros": {
+      "calories": 530,
+      "protein": 51,
+      "carbs": 61,
+      "fat": 9,
+      "fiber": 4
+    },
+    "instructions": "Reis garen. Putenbrust mit Kräutern von beiden Seiten je 4 Min saftig braten. Zucchinischeiben in Olivenöl anbraten und servieren.",
+    "icon": "🥩"
+  },
+  {
+    "id": "rec_14",
+    "name": "Mediterraner Feta-Linsen Salat",
+    "category": "Abendessen",
+    "prep_time": "15 Min",
+    "diets": [
+      "All",
+      "Vegetarisch",
+      "High-Protein",
+      "Clean"
+    ],
+    "ingredients": {
+      "Rote Linsen": 100,
+      "Feta / Hirtenkäse": 70,
+      "Cherrytomaten": 100,
+      "Zwiebeln": 30,
+      "Olivenöl": 10
+    },
+    "macros": {
+      "calories": 480,
+      "protein": 33,
+      "carbs": 44,
+      "fat": 20,
+      "fiber": 9
+    },
+    "instructions": "Linsen bissfest kochen und abkühlen lassen. Mit Tomaten, roten Zwiebeln und gewürfeltem Feta vermengen. Mit Olivenöl und Essig verfeinern.",
+    "icon": "🥗"
+  },
+  {
+    "id": "rec_15",
+    "name": "Griechischer Joghurt-Power Becher",
+    "category": "Frühstück",
+    "prep_time": "5 Min",
+    "diets": [
+      "All",
+      "Vegetarisch",
+      "High-Protein",
+      "Clean"
+    ],
+    "ingredients": {
+      "Naturjoghurt": 200,
+      "Magerquark": 100,
+      "Beeren (TK)": 80,
+      "Chia-Samen": 15,
+      "Bananen": 80
+    },
+    "macros": {
+      "calories": 380,
+      "protein": 28,
+      "carbs": 44,
+      "fat": 8,
+      "fiber": 8
+    },
+    "instructions": "Joghurt und Quark cremig rühren. Bananenscheiben, Beeren und Chia-Samen darauf verteilen. Herrlich erfrischend am Morgen.",
+    "icon": "🍓"
+  },
+  {
+    "id": "rec_16",
+    "name": "Low-Carb Brokkoli-Hähnchen Gratin",
+    "category": "Abendessen",
+    "prep_time": "25 Min",
+    "diets": [
+      "All",
+      "High-Protein",
+      "Low-Carb",
+      "Clean"
+    ],
+    "ingredients": {
+      "Hähnchenbrust": 200,
+      "Brokkoli": 200,
+      "Parmesan": 30,
+      "Naturjoghurt": 60,
+      "Knoblauch": 5
+    },
+    "macros": {
+      "calories": 440,
+      "protein": 56,
+      "carbs": 12,
+      "fat": 16,
+      "fiber": 6
+    },
+    "instructions": "Hähnchen und Brokkoli vorgaren. In eine Auflaufform geben. Joghurt mit Knoblauch verrühren, darüber geben und mit Parmesan im Ofen goldbraun überbacken.",
+    "icon": "🥦"
+  },
+  {
+    "id": "rec_17",
+    "name": "Erdnuss-Bananen Haferbrei",
+    "category": "Frühstück",
+    "prep_time": "8 Min",
+    "diets": [
+      "All",
+      "Vegan",
+      "Vegetarisch",
+      "High-Protein",
+      "Sparfuchs"
+    ],
+    "ingredients": {
+      "Haferflocken": 80,
+      "Bananen": 120,
+      "Erdnussbutter": 20,
+      "Haferdrink": 200,
+      "Chia-Samen": 10
+    },
+    "macros": {
+      "calories": 510,
+      "protein": 18,
+      "carbs": 68,
+      "fat": 16,
+      "fiber": 11
+    },
+    "instructions": "Haferflocken mit Haferdrink aufkochen. Banane zerdrücken, Erdnussbutter und Chia unterrühren.",
+    "icon": "🍌"
+  },
+  {
+    "id": "rec_18",
+    "name": "Beeren-Chia Pudding",
+    "category": "Frühstück",
+    "prep_time": "5 Min",
+    "diets": [
+      "All",
+      "Vegan",
+      "Vegetarisch",
+      "Clean"
+    ],
+    "ingredients": {
+      "Chia-Samen": 30,
+      "Haferdrink": 250,
+      "Beeren (TK)": 100,
+      "Bananen": 80
+    },
+    "macros": {
+      "calories": 380,
+      "protein": 10,
+      "carbs": 48,
+      "fat": 14,
+      "fiber": 14
+    },
+    "instructions": "Chia-Samen mit Haferdrink verrühren, 10 Min quellen lassen. Mit Beeren und Bananenscheiben toppen.",
+    "icon": "🫐"
+  },
+  {
+    "id": "rec_19",
+    "name": "Kichererbsen-Avocado Frühstückssalat",
+    "category": "Frühstück",
+    "prep_time": "10 Min",
+    "diets": [
+      "All",
+      "Vegan",
+      "Vegetarisch",
+      "High-Protein",
+      "Clean"
+    ],
+    "ingredients": {
+      "Kichererbsen": 150,
+      "Avocado": 1,
+      "Cherrytomaten": 80,
+      "Zwiebeln": 30,
+      "Zitrone": 0.5,
+      "Olivenöl": 10
+    },
+    "macros": {
+      "calories": 470,
+      "protein": 16,
+      "carbs": 32,
+      "fat": 28,
+      "fiber": 14
+    },
+    "instructions": "Kichererbsen abtropfen. Avocado würfeln, mit Tomaten, Zwiebeln, Zitronensaft und Olivenöl vermengen.",
+    "icon": "🥑"
+  },
+  {
+    "id": "rec_20",
+    "name": "Apfel-Zimt Porridge",
+    "category": "Frühstück",
+    "prep_time": "10 Min",
+    "diets": [
+      "All",
+      "Vegan",
+      "Vegetarisch",
+      "Sparfuchs",
+      "Clean"
+    ],
+    "ingredients": {
+      "Haferflocken": 80,
+      "Äpfel": 150,
+      "Haferdrink": 250,
+      "Erdnussbutter": 15
+    },
+    "macros": {
+      "calories": 460,
+      "protein": 14,
+      "carbs": 70,
+      "fat": 12,
+      "fiber": 10
+    },
+    "instructions": "Haferflocken in Haferdrink köcheln. Apfel würfeln, unterheben, mit Erdnussbutter servieren.",
+    "icon": "🍎"
+  },
+  {
+    "id": "rec_21",
+    "name": "Pilz-Tomaten Toast",
+    "category": "Frühstück",
+    "prep_time": "12 Min",
+    "diets": [
+      "All",
+      "Vegan",
+      "Vegetarisch",
+      "Clean"
+    ],
+    "ingredients": {
+      "Vollkornbrot": 80,
+      "Champignons": 120,
+      "Cherrytomaten": 80,
+      "Olivenöl": 10,
+      "Knoblauch": 5
+    },
+    "macros": {
+      "calories": 320,
+      "protein": 12,
+      "carbs": 38,
+      "fat": 12,
+      "fiber": 7
+    },
+    "instructions": "Champignons und Knoblauch in Olivenöl anbraten, Tomaten zugeben. Auf geröstetem Vollkornbrot anrichten.",
+    "icon": "🍄"
+  },
+  {
+    "id": "rec_22",
+    "name": "Süßkartoffel-Kichererbsen Bowl",
+    "category": "Mittagessen",
+    "prep_time": "25 Min",
+    "diets": [
+      "All",
+      "Vegan",
+      "Vegetarisch",
+      "High-Protein",
+      "Clean",
+      "Sparfuchs"
+    ],
+    "ingredients": {
+      "Süßkartoffel": 200,
+      "Kichererbsen": 150,
+      "Spinat": 80,
+      "Olivenöl": 10,
+      "Zwiebeln": 40
+    },
+    "macros": {
+      "calories": 480,
+      "protein": 18,
+      "carbs": 72,
+      "fat": 12,
+      "fiber": 16
+    },
+    "instructions": "Süßkartoffel würfeln und im Ofen rösten. Kichererbsen mit Zwiebeln anbraten, Spinat unterheben.",
+    "icon": "🍠"
+  },
+  {
+    "id": "rec_23",
+    "name": "Tofu-Brokkoli Reis",
+    "category": "Mittagessen",
+    "prep_time": "20 Min",
+    "diets": [
+      "All",
+      "Vegan",
+      "Vegetarisch",
+      "High-Protein",
+      "Clean"
+    ],
+    "ingredients": {
+      "Bio-Tofu": 180,
+      "Brokkoli": 180,
+      "Reis": 90,
+      "Sojasauce": 15,
+      "Olivenöl": 10
+    },
+    "macros": {
+      "calories": 520,
+      "protein": 32,
+      "carbs": 62,
+      "fat": 14,
+      "fiber": 8
+    },
+    "instructions": "Reis kochen. Tofu würfeln und scharf anbraten, Brokkoli dämpfen, mit Sojasauce ablöschen.",
+    "icon": "🥦"
+  },
+  {
+    "id": "rec_24",
+    "name": "Zucchini-Bohnen Pfanne",
+    "category": "Mittagessen",
+    "prep_time": "18 Min",
+    "diets": [
+      "All",
+      "Vegan",
+      "Vegetarisch",
+      "High-Protein",
+      "Sparfuchs"
+    ],
+    "ingredients": {
+      "Kidneybohnen": 180,
+      "Zucchini": 180,
+      "Paprika-Mix": 100,
+      "Zwiebeln": 40,
+      "Olivenöl": 10
+    },
+    "macros": {
+      "calories": 390,
+      "protein": 20,
+      "carbs": 48,
+      "fat": 12,
+      "fiber": 16
+    },
+    "instructions": "Zwiebeln und Paprika anbraten, Zucchini und Bohnen zugeben, kräftig würzen.",
+    "icon": "🫑"
+  },
+  {
+    "id": "rec_25",
+    "name": "Linsen-Erbsen Suppe",
+    "category": "Mittagessen",
+    "prep_time": "25 Min",
+    "diets": [
+      "All",
+      "Vegan",
+      "Vegetarisch",
+      "High-Protein",
+      "Sparfuchs",
+      "Clean"
+    ],
+    "ingredients": {
+      "Rote Linsen": 100,
+      "TK-Erbsen": 100,
+      "Karotten": 80,
+      "Gemüsebrühe": 300,
+      "Zwiebeln": 40,
+      "Olivenöl": 8
+    },
+    "macros": {
+      "calories": 410,
+      "protein": 24,
+      "carbs": 62,
+      "fat": 8,
+      "fiber": 16
+    },
+    "instructions": "Zwiebeln und Karotten andünsten. Linsen, Erbsen und Brühe 15 Min köcheln.",
+    "icon": "🍲"
+  },
+  {
+    "id": "rec_26",
+    "name": "Kichererbsen-Pasta",
+    "category": "Mittagessen",
+    "prep_time": "20 Min",
+    "diets": [
+      "All",
+      "Vegan",
+      "Vegetarisch",
+      "High-Protein",
+      "Sparfuchs"
+    ],
+    "ingredients": {
+      "Vollkornpasta": 90,
+      "Kichererbsen": 120,
+      "passierte Tomaten": 180,
+      "Spinat": 70,
+      "Olivenöl": 10,
+      "Knoblauch": 5
+    },
+    "macros": {
+      "calories": 540,
+      "protein": 24,
+      "carbs": 82,
+      "fat": 12,
+      "fiber": 15
+    },
+    "instructions": "Pasta kochen. Knoblauch in Olivenöl anbraten, Tomaten und Kichererbsen einkochen, Spinat unterheben.",
+    "icon": "🍝"
+  },
+  {
+    "id": "rec_27",
+    "name": "Tofu-Paprika Reis-Pfanne",
+    "category": "Abendessen",
+    "prep_time": "20 Min",
+    "diets": [
+      "All",
+      "Vegan",
+      "Vegetarisch",
+      "High-Protein"
+    ],
+    "ingredients": {
+      "Bio-Tofu": 180,
+      "Paprika-Mix": 150,
+      "Reis": 90,
+      "Sojasauce": 15,
+      "Olivenöl": 10,
+      "Zwiebeln": 40
+    },
+    "macros": {
+      "calories": 530,
+      "protein": 30,
+      "carbs": 64,
+      "fat": 14,
+      "fiber": 6
+    },
+    "instructions": "Reis garen. Tofu und Paprika scharf anbraten, mit Sojasauce ablöschen.",
+    "icon": "🍚"
+  },
+  {
+    "id": "rec_28",
+    "name": "Kichererbsen-Spinat Curry",
+    "category": "Abendessen",
+    "prep_time": "22 Min",
+    "diets": [
+      "All",
+      "Vegan",
+      "Vegetarisch",
+      "High-Protein",
+      "Clean",
+      "Sparfuchs"
+    ],
+    "ingredients": {
+      "Kichererbsen": 180,
+      "Spinat": 100,
+      "passierte Tomaten": 150,
+      "Zwiebeln": 50,
+      "Olivenöl": 10,
+      "Gemüsebrühe": 100
+    },
+    "macros": {
+      "calories": 420,
+      "protein": 20,
+      "carbs": 52,
+      "fat": 12,
+      "fiber": 14
+    },
+    "instructions": "Zwiebeln andünsten, Kichererbsen und Tomaten zugeben, Spinat zum Schluss unterheben.",
+    "icon": "🍛"
+  },
+  {
+    "id": "rec_29",
+    "name": "Zucchini-Linsen Pfanne",
+    "category": "Abendessen",
+    "prep_time": "20 Min",
+    "diets": [
+      "All",
+      "Vegan",
+      "Vegetarisch",
+      "High-Protein",
+      "Sparfuchs"
+    ],
+    "ingredients": {
+      "Rote Linsen": 100,
+      "Zucchini": 180,
+      "Karotten": 70,
+      "Zwiebeln": 40,
+      "Olivenöl": 10,
+      "Gemüsebrühe": 200
+    },
+    "macros": {
+      "calories": 400,
+      "protein": 22,
+      "carbs": 58,
+      "fat": 10,
+      "fiber": 14
+    },
+    "instructions": "Linsen in Brühe weich kochen. Zucchini und Karotten anbraten, Linsen untermischen.",
+    "icon": "🥘"
+  },
+  {
+    "id": "rec_30",
+    "name": "Brokkoli-Tofu Bowl",
+    "category": "Abendessen",
+    "prep_time": "18 Min",
+    "diets": [
+      "All",
+      "Vegan",
+      "Vegetarisch",
+      "High-Protein",
+      "Clean"
+    ],
+    "ingredients": {
+      "Bio-Tofu": 200,
+      "Brokkoli": 200,
+      "Reis": 80,
+      "Sojasauce": 12,
+      "Olivenöl": 8
+    },
+    "macros": {
+      "calories": 500,
+      "protein": 34,
+      "carbs": 56,
+      "fat": 14,
+      "fiber": 8
+    },
+    "instructions": "Reis kochen. Tofu knusprig braten, Brokkoli dämpfen, mit Sojasauce servieren.",
+    "icon": "🥗"
+  },
+  {
+    "id": "rec_31",
+    "name": "Kartoffel-Gemüse Eintopf",
+    "category": "Abendessen",
+    "prep_time": "30 Min",
+    "diets": [
+      "All",
+      "Vegan",
+      "Vegetarisch",
+      "Sparfuchs",
+      "Clean"
+    ],
+    "ingredients": {
+      "Kartoffeln": 250,
+      "Karotten": 100,
+      "TK-Erbsen": 80,
+      "Gemüsebrühe": 300,
+      "Zwiebeln": 40,
+      "Olivenöl": 8
+    },
+    "macros": {
+      "calories": 380,
+      "protein": 12,
+      "carbs": 68,
+      "fat": 8,
+      "fiber": 10
+    },
+    "instructions": "Kartoffeln und Karotten in Brühe weich kochen, Erbsen zugeben, mit Salz und Pfeffer abschmecken.",
+    "icon": "🥔"
+  },
+  {
+    "id": "rec_32",
+    "name": "Rührei Avocado Spinat",
+    "category": "Frühstück",
+    "prep_time": "10 Min",
+    "diets": [
+      "All",
+      "Vegetarisch",
+      "High-Protein",
+      "Low-Carb",
+      "Clean"
+    ],
+    "ingredients": {
+      "Eier": 3,
+      "Avocado": 0.5,
+      "Spinat": 60,
+      "Olivenöl": 8
+    },
+    "macros": {
+      "calories": 390,
+      "protein": 24,
+      "carbs": 6,
+      "fat": 30,
+      "fiber": 5
+    },
+    "instructions": "Spinat zusammenfallen lassen, Eier stocken lassen, mit Avocado servieren.",
+    "icon": "🍳"
+  },
+  {
+    "id": "rec_33",
+    "name": "Hüttenkäse-Gurken Bowl",
+    "category": "Frühstück",
+    "prep_time": "5 Min",
+    "diets": [
+      "All",
+      "Vegetarisch",
+      "High-Protein",
+      "Low-Carb",
+      "Sparfuchs"
+    ],
+    "ingredients": {
+      "Hüttenkäse": 200,
+      "Gurke": 150,
+      "Cherrytomaten": 80,
+      "Olivenöl": 5
+    },
+    "macros": {
+      "calories": 280,
+      "protein": 26,
+      "carbs": 12,
+      "fat": 12,
+      "fiber": 2
+    },
+    "instructions": "Hüttenkäse mit Gurkenscheiben und Tomaten anrichten, mit etwas Olivenöl beträufeln.",
+    "icon": "🥒"
+  },
+  {
+    "id": "rec_34",
+    "name": "Zucchini-Omelett",
+    "category": "Frühstück",
+    "prep_time": "12 Min",
+    "diets": [
+      "All",
+      "Vegetarisch",
+      "High-Protein",
+      "Low-Carb",
+      "Clean"
+    ],
+    "ingredients": {
+      "Eier": 3,
+      "Zucchini": 120,
+      "Spinat": 40,
+      "Olivenöl": 8
+    },
+    "macros": {
+      "calories": 310,
+      "protein": 22,
+      "carbs": 6,
+      "fat": 22,
+      "fiber": 2
+    },
+    "instructions": "Zucchini kurz anbraten, verquirlte Eier und Spinat zugeben, stocken lassen.",
+    "icon": "🥚"
+  },
+  {
+    "id": "rec_35",
+    "name": "Quark-Beeren ohne Hafer",
+    "category": "Frühstück",
+    "prep_time": "4 Min",
+    "diets": [
+      "All",
+      "Vegetarisch",
+      "High-Protein",
+      "Low-Carb",
+      "Clean"
+    ],
+    "ingredients": {
+      "Magerquark": 250,
+      "Beeren (TK)": 80,
+      "Chia-Samen": 10
+    },
+    "macros": {
+      "calories": 260,
+      "protein": 32,
+      "carbs": 18,
+      "fat": 4,
+      "fiber": 6
+    },
+    "instructions": "Quark glatt rühren, Beeren und Chia darüber geben.",
+    "icon": "🍓"
+  },
+  {
+    "id": "rec_36",
+    "name": "Thunfisch-Gurken Salat",
+    "category": "Mittagessen",
+    "prep_time": "8 Min",
+    "diets": [
+      "All",
+      "High-Protein",
+      "Low-Carb",
+      "Clean",
+      "Sparfuchs"
+    ],
+    "ingredients": {
+      "Thunfisch (Dose)": 150,
+      "Gurke": 150,
+      "Eisbergsalat": 80,
+      "Olivenöl": 10,
+      "Zwiebeln": 20
+    },
+    "macros": {
+      "calories": 320,
+      "protein": 36,
+      "carbs": 8,
+      "fat": 16,
+      "fiber": 3
+    },
+    "instructions": "Thunfisch abtropfen, mit Gurke, Salat und Zwiebeln mischen, mit Olivenöl anmachen.",
+    "icon": "🥗"
+  },
+  {
+    "id": "rec_37",
+    "name": "Hähnchen-Salat Bowl",
+    "category": "Mittagessen",
+    "prep_time": "15 Min",
+    "diets": [
+      "All",
+      "High-Protein",
+      "Low-Carb",
+      "Clean"
+    ],
+    "ingredients": {
+      "Hähnchenbrust": 180,
+      "Eisbergsalat": 80,
+      "Gurke": 100,
+      "Olivenöl": 10,
+      "Zitrone": 0.5
+    },
+    "macros": {
+      "calories": 340,
+      "protein": 42,
+      "carbs": 6,
+      "fat": 16,
+      "fiber": 2
+    },
+    "instructions": "Hähnchen braten, in Streifen schneiden, auf Salat und Gurke mit Zitronensaft anrichten.",
+    "icon": "🍗"
+  },
+  {
+    "id": "rec_38",
+    "name": "Tofu-Champignon Low-Carb Pfanne",
+    "category": "Mittagessen",
+    "prep_time": "15 Min",
+    "diets": [
+      "All",
+      "Vegan",
+      "Vegetarisch",
+      "High-Protein",
+      "Low-Carb",
+      "Clean"
+    ],
+    "ingredients": {
+      "Bio-Tofu": 200,
+      "Champignons": 150,
+      "Zucchini": 120,
+      "Olivenöl": 10,
+      "Sojasauce": 10
+    },
+    "macros": {
+      "calories": 360,
+      "protein": 28,
+      "carbs": 12,
+      "fat": 22,
+      "fiber": 5
+    },
+    "instructions": "Tofu und Champignons scharf anbraten, Zucchini zugeben, mit Sojasauce ablöschen.",
+    "icon": "🍄"
+  },
+  {
+    "id": "rec_39",
+    "name": "Puten-Zucchini Pfanne",
+    "category": "Abendessen",
+    "prep_time": "18 Min",
+    "diets": [
+      "All",
+      "High-Protein",
+      "Low-Carb",
+      "Clean"
+    ],
+    "ingredients": {
+      "Putenbrust": 200,
+      "Zucchini": 200,
+      "Paprika-Mix": 80,
+      "Olivenöl": 10,
+      "Knoblauch": 5
+    },
+    "macros": {
+      "calories": 370,
+      "protein": 48,
+      "carbs": 10,
+      "fat": 14,
+      "fiber": 4
+    },
+    "instructions": "Pute anbraten, Zucchini und Paprika zugeben, mit Knoblauch würzen.",
+    "icon": "🥩"
+  },
+  {
+    "id": "rec_40",
+    "name": "Lachs-Spinat Pfanne",
+    "category": "Abendessen",
+    "prep_time": "15 Min",
+    "diets": [
+      "All",
+      "High-Protein",
+      "Low-Carb",
+      "Clean"
+    ],
+    "ingredients": {
+      "Lachsfilet": 160,
+      "Spinat": 120,
+      "Zucchini": 80,
+      "Olivenöl": 8,
+      "Zitrone": 0.5
+    },
+    "macros": {
+      "calories": 420,
+      "protein": 38,
+      "carbs": 6,
+      "fat": 26,
+      "fiber": 3
+    },
+    "instructions": "Lachs in der Pfanne garen, Spinat und Zucchini daneben schwenken, mit Zitrone abschließen.",
+    "icon": "🐟"
+  },
+  {
+    "id": "rec_41",
+    "name": "Hüttenkäse-Beeren Bowl",
+    "category": "Frühstück",
+    "prep_time": "5 Min",
+    "diets": [
+      "All",
+      "Vegetarisch",
+      "High-Protein",
+      "Clean"
+    ],
+    "ingredients": {
+      "Hüttenkäse": 200,
+      "Beeren (TK)": 100,
+      "Chia-Samen": 10,
+      "Bananen": 60
+    },
+    "macros": {
+      "calories": 330,
+      "protein": 28,
+      "carbs": 32,
+      "fat": 8,
+      "fiber": 7
+    },
+    "instructions": "Hüttenkäse in eine Schüssel geben, Beeren, Banane und Chia darüber verteilen.",
+    "icon": "🥣"
+  },
+  {
+    "id": "rec_42",
+    "name": "Hähnchen-Erbsen Reis",
+    "category": "Mittagessen",
+    "prep_time": "20 Min",
+    "diets": [
+      "All",
+      "High-Protein",
+      "Clean",
+      "Sparfuchs"
+    ],
+    "ingredients": {
+      "Hähnchenbrust": 180,
+      "Reis": 90,
+      "TK-Erbsen": 100,
+      "Olivenöl": 8,
+      "Zwiebeln": 30
+    },
+    "macros": {
+      "calories": 520,
+      "protein": 46,
+      "carbs": 62,
+      "fat": 10,
+      "fiber": 6
+    },
+    "instructions": "Reis kochen. Hähnchen anbraten, Erbsen und Zwiebeln zugeben, mit dem Reis vermengen.",
+    "icon": "🍚"
+  },
+  {
+    "id": "rec_43",
+    "name": "Feta-Gurken Salat",
+    "category": "Abendessen",
+    "prep_time": "10 Min",
+    "diets": [
+      "All",
+      "Vegetarisch",
+      "High-Protein",
+      "Low-Carb",
+      "Clean"
+    ],
+    "ingredients": {
+      "Feta / Hirtenkäse": 80,
+      "Gurke": 150,
+      "Cherrytomaten": 100,
+      "Olivenöl": 10,
+      "Zwiebeln": 30
+    },
+    "macros": {
+      "calories": 340,
+      "protein": 16,
+      "carbs": 12,
+      "fat": 26,
+      "fiber": 3
+    },
+    "instructions": "Gurke und Tomaten schneiden, Feta darüber bröseln, mit Olivenöl und Zwiebeln anmachen.",
+    "icon": "🧀"
+  },
+  {
+    "id": "rec_44",
+    "name": "Kartoffel-Quark Teller",
+    "category": "Abendessen",
+    "prep_time": "25 Min",
+    "diets": [
+      "All",
+      "Vegetarisch",
+      "High-Protein",
+      "Sparfuchs"
+    ],
+    "ingredients": {
+      "Kartoffeln": 250,
+      "Magerquark": 200,
+      "Naturjoghurt": 40,
+      "Zwiebeln": 30,
+      "Gurke": 80
+    },
+    "macros": {
+      "calories": 430,
+      "protein": 32,
+      "carbs": 62,
+      "fat": 4,
+      "fiber": 6
+    },
+    "instructions": "Kartoffeln kochen. Quark mit Joghurt und Zwiebeln verrühren, mit Gurke servieren.",
+    "icon": "🥔"
+  },
+  {
+    "id": "rec_45",
+    "name": "Hähnchen-Paprika Low-Carb",
+    "category": "Abendessen",
+    "prep_time": "18 Min",
+    "diets": [
+      "All",
+      "High-Protein",
+      "Low-Carb",
+      "Clean"
+    ],
+    "ingredients": {
+      "Hähnchenbrust": 200,
+      "Paprika-Mix": 150,
+      "Zucchini": 100,
+      "Olivenöl": 10,
+      "Paprikapulver": 3
+    },
+    "macros": {
+      "calories": 380,
+      "protein": 46,
+      "carbs": 10,
+      "fat": 16,
+      "fiber": 4
+    },
+    "instructions": "Hähnchen würfeln, mit Paprikapulver würzen, mit Paprika und Zucchini scharf anbraten.",
+    "icon": "🌶️"
+  }
+]

@@ -1,0 +1,11 @@
+[
+  {"name": "Olivenöl", "icon": "droplet", "hint": "Spart ~0,95 €"},
+  {"name": "Reis", "icon": "wheat", "hint": "Spart ~0,48 €"},
+  {"name": "Haferflocken", "icon": "coffee", "hint": "Spart ~0,32 €"},
+  {"name": "Sojasauce", "icon": "flask-conical", "hint": "Spart ~0,45 €"},
+  {"name": "Zwiebeln", "icon": "circle-dot", "hint": "Spart ~0,25 €"},
+  {"name": "Knoblauch", "icon": "sparkle", "hint": "Spart ~0,20 €"},
+  {"name": "Gemüsebrühe", "icon": "soup", "hint": "Spart ~0,18 €"},
+  {"name": "Chia-Samen", "icon": "sprout", "hint": "Spart ~0,40 €"},
+  {"name": "Erdnussbutter", "icon": "heart", "hint": "Spart ~0,50 €"}
+]

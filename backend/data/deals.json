@@ -1,0 +1,335 @@
+{
+  "week": "2026-W36",
+  "stores": {
+    "REWE": [
+      {
+        "ingredient": "Hähnchenbrust",
+        "offer_price": 0.74,
+        "regular_price": 0.99,
+        "unit": "100g",
+        "discount_percent": 25,
+        "badge": "Knüller der Woche"
+      },
+      {
+        "ingredient": "Magerquark",
+        "offer_price": 0.45,
+        "regular_price": 0.65,
+        "unit": "100g",
+        "discount_percent": 31,
+        "badge": "App-Coupon"
+      },
+      {
+        "ingredient": "Brokkoli",
+        "offer_price": 0.29,
+        "regular_price": 0.45,
+        "unit": "100g",
+        "discount_percent": 35,
+        "badge": "Frische-Hit"
+      },
+      {
+        "ingredient": "Haferflocken",
+        "offer_price": 0.15,
+        "regular_price": 0.2,
+        "unit": "100g",
+        "discount_percent": 25,
+        "badge": "Dauertief"
+      },
+      {
+        "ingredient": "Eier",
+        "offer_price": 0.22,
+        "regular_price": 0.32,
+        "unit": "Stück",
+        "discount_percent": 31,
+        "badge": "Wochen-Deal"
+      },
+      {
+        "ingredient": "Bananen",
+        "offer_price": 0.14,
+        "regular_price": 0.22,
+        "unit": "100g",
+        "discount_percent": 36,
+        "badge": "Bio-Angebot"
+      },
+      {
+        "ingredient": "Kichererbsen",
+        "offer_price": 0.19,
+        "regular_price": 0.28,
+        "unit": "100g",
+        "discount_percent": 32,
+        "badge": "Super-Spar"
+      },
+      {
+        "ingredient": "Beeren (TK)",
+        "offer_price": 0.55,
+        "regular_price": 0.8,
+        "unit": "100g",
+        "discount_percent": 31,
+        "badge": "TK-Knaller"
+      },
+      {
+        "ingredient": "Hüttenkäse",
+        "offer_price": 0.42,
+        "regular_price": 0.63,
+        "unit": "100g",
+        "discount_percent": 33,
+        "badge": "App-Coupon"
+      }
+    ],
+    "Lidl": [
+      {
+        "ingredient": "Hähnchenbrust",
+        "offer_price": 0.62,
+        "regular_price": 0.85,
+        "unit": "100g",
+        "discount_percent": 27,
+        "badge": "Super-Samstag"
+      },
+      {
+        "ingredient": "Magerquark",
+        "offer_price": 0.38,
+        "regular_price": 0.55,
+        "unit": "100g",
+        "discount_percent": 31,
+        "badge": "Lidl Plus Deal"
+      },
+      {
+        "ingredient": "Lachsfilet",
+        "offer_price": 1.49,
+        "regular_price": 2.1,
+        "unit": "100g",
+        "discount_percent": 29,
+        "badge": "Frische Fisch"
+      },
+      {
+        "ingredient": "Haferflocken",
+        "offer_price": 0.13,
+        "regular_price": 0.18,
+        "unit": "100g",
+        "discount_percent": 28,
+        "badge": "Billiger Kochen"
+      },
+      {
+        "ingredient": "Spinat",
+        "offer_price": 0.28,
+        "regular_price": 0.42,
+        "unit": "100g",
+        "discount_percent": 33,
+        "badge": "Gartenfrisch"
+      },
+      {
+        "ingredient": "Thunfisch (Dose)",
+        "offer_price": 0.79,
+        "regular_price": 1.0,
+        "unit": "100g",
+        "discount_percent": 21,
+        "badge": "Vorrats-Hit"
+      },
+      {
+        "ingredient": "Eier",
+        "offer_price": 0.19,
+        "regular_price": 0.28,
+        "unit": "Stück",
+        "discount_percent": 32,
+        "badge": "Lidl Plus"
+      },
+      {
+        "ingredient": "Avocado",
+        "offer_price": 0.89,
+        "regular_price": 1.39,
+        "unit": "Stück",
+        "discount_percent": 36,
+        "badge": "Wochen-Star"
+      },
+      {
+        "ingredient": "Haferdrink",
+        "offer_price": 0.09,
+        "regular_price": 0.12,
+        "unit": "100g",
+        "discount_percent": 25,
+        "badge": "Lidl Plus"
+      }
+    ],
+    "ALDI Süd": [
+      {
+        "ingredient": "Rinderhackfleisch",
+        "offer_price": 0.79,
+        "regular_price": 1.09,
+        "unit": "100g",
+        "discount_percent": 27,
+        "badge": "ALDI Tiefpreis"
+      },
+      {
+        "ingredient": "Magerquark",
+        "offer_price": 0.39,
+        "regular_price": 0.55,
+        "unit": "100g",
+        "discount_percent": 29,
+        "badge": "Frische-Sparer"
+      },
+      {
+        "ingredient": "Paprika-Mix",
+        "offer_price": 0.29,
+        "regular_price": 0.45,
+        "unit": "100g",
+        "discount_percent": 35,
+        "badge": "Frische der Woche"
+      },
+      {
+        "ingredient": "Süßkartoffel",
+        "offer_price": 0.32,
+        "regular_price": 0.48,
+        "unit": "100g",
+        "discount_percent": 33,
+        "badge": "Gemüse-Hit"
+      },
+      {
+        "ingredient": "Hähnchenbrust",
+        "offer_price": 0.65,
+        "regular_price": 0.88,
+        "unit": "100g",
+        "discount_percent": 26,
+        "badge": "Gutfleisch Deal"
+      },
+      {
+        "ingredient": "Naturjoghurt",
+        "offer_price": 0.18,
+        "regular_price": 0.27,
+        "unit": "100g",
+        "discount_percent": 33,
+        "badge": "Bio-Deal"
+      },
+      {
+        "ingredient": "Reis",
+        "offer_price": 0.16,
+        "regular_price": 0.23,
+        "unit": "100g",
+        "discount_percent": 30,
+        "badge": "Vorrats-Pack"
+      },
+      {
+        "ingredient": "Kartoffeln",
+        "offer_price": 0.08,
+        "regular_price": 0.12,
+        "unit": "100g",
+        "discount_percent": 33,
+        "badge": "Wochenpreis"
+      }
+    ],
+    "Kaufland": [
+      {
+        "ingredient": "Hähnchenbrust",
+        "offer_price": 0.69,
+        "regular_price": 0.95,
+        "unit": "100g",
+        "discount_percent": 27,
+        "badge": "K-Classic Sparwoche"
+      },
+      {
+        "ingredient": "Bio-Tofu",
+        "offer_price": 0.45,
+        "regular_price": 0.65,
+        "unit": "100g",
+        "discount_percent": 30,
+        "badge": "Veggie Sparer"
+      },
+      {
+        "ingredient": "Kichererbsen",
+        "offer_price": 0.18,
+        "regular_price": 0.26,
+        "unit": "100g",
+        "discount_percent": 30,
+        "badge": "K-Classic Deal"
+      },
+      {
+        "ingredient": "Brokkoli",
+        "offer_price": 0.29,
+        "regular_price": 0.44,
+        "unit": "100g",
+        "discount_percent": 34,
+        "badge": "Wochen-Knaller"
+      },
+      {
+        "ingredient": "Vollkornpasta",
+        "offer_price": 0.24,
+        "regular_price": 0.36,
+        "unit": "100g",
+        "discount_percent": 33,
+        "badge": "Italien-Woche"
+      },
+      {
+        "ingredient": "Cherrytomaten",
+        "offer_price": 0.28,
+        "regular_price": 0.42,
+        "unit": "100g",
+        "discount_percent": 33,
+        "badge": "Sonnengereift"
+      },
+      {
+        "ingredient": "TK-Erbsen",
+        "offer_price": 0.16,
+        "regular_price": 0.24,
+        "unit": "100g",
+        "discount_percent": 33,
+        "badge": "K-Classic"
+      }
+    ],
+    "EDEKA": [
+      {
+        "ingredient": "Hähnchenbrust",
+        "offer_price": 0.79,
+        "regular_price": 1.05,
+        "unit": "100g",
+        "discount_percent": 25,
+        "badge": "Gut & Günstig Hit"
+      },
+      {
+        "ingredient": "Magerquark",
+        "offer_price": 0.49,
+        "regular_price": 0.69,
+        "unit": "100g",
+        "discount_percent": 29,
+        "badge": "EDEKA App Deal"
+      },
+      {
+        "ingredient": "Heidelbeeren",
+        "offer_price": 0.69,
+        "regular_price": 0.99,
+        "unit": "100g",
+        "discount_percent": 30,
+        "badge": "Beeren-Woche"
+      },
+      {
+        "ingredient": "Zucchini",
+        "offer_price": 0.32,
+        "regular_price": 0.49,
+        "unit": "100g",
+        "discount_percent": 35,
+        "badge": "Frische-Star"
+      },
+      {
+        "ingredient": "Eier",
+        "offer_price": 0.24,
+        "regular_price": 0.34,
+        "unit": "Stück",
+        "discount_percent": 29,
+        "badge": "Regional-Deal"
+      },
+      {
+        "ingredient": "Lachsfilet",
+        "offer_price": 1.59,
+        "regular_price": 2.25,
+        "unit": "100g",
+        "discount_percent": 29,
+        "badge": "Fischtheke"
+      },
+      {
+        "ingredient": "Äpfel",
+        "offer_price": 0.16,
+        "regular_price": 0.24,
+        "unit": "100g",
+        "discount_percent": 33,
+        "badge": "Regional"
+      }
+    ]
+  }
+}
